@@ -1,0 +1,297 @@
+﻿@model IEnumerable<PW.Models.Appointment>
+
+@{
+    ViewData["Title"] = "Appointments";
+}
+
+<div class="container py-5">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+
+            <h2 class="fw-bold">
+
+                Appointment Management
+
+            </h2>
+
+            <p class="text-muted">
+
+                View and manage consultation appointments.
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Statistics -->
+
+    <div class="row g-4 mb-4">
+
+        <div class="col-lg-3">
+
+            <div class="card shadow-sm border-0">
+
+                <div class="card-body text-center">
+
+                    <h2 class="text-primary">
+
+                        @Model.Count()
+
+                    </h2>
+
+                    <p class="mb-0">
+
+                        Total Appointments
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-3">
+
+            <div class="card shadow-sm border-0">
+
+                <div class="card-body text-center">
+
+                    <h2 class="text-warning">
+
+                        @Model.Count(x => x.Status == AppointmentStatus.Pending)
+
+                    </h2>
+
+                    <p class="mb-0">
+
+                        Pending
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-3">
+
+            <div class="card shadow-sm border-0">
+
+                <div class="card-body text-center">
+
+                    <h2 class="text-success">
+
+                        @Model.Count(x => x.Status == AppointmentStatus.Approved)
+
+                    </h2>
+
+                    <p class="mb-0">
+
+                        Approved
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-3">
+
+            <div class="card shadow-sm border-0">
+
+                <div class="card-body text-center">
+
+                    <h2 class="text-info">
+
+                        @Model.Count(x => x.Status == AppointmentStatus.Completed)
+
+                    </h2>
+
+                    <p class="mb-0">
+
+                        Completed
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Appointment Table -->
+
+    <div class="card shadow-sm">
+
+        <div class="card-header">
+
+            <h5 class="mb-0">
+
+                Appointment List
+
+            </h5>
+
+        </div>
+
+        <div class="card-body">
+
+            <table class="table table-hover align-middle">
+
+                <thead class="table-light">
+
+                    <tr>
+
+                        <th>Student</th>
+
+                        <th>Date</th>
+
+                        <th>Time</th>
+
+                        <th>Description</th>
+
+                        <th>Status</th>
+
+                        <th width="220">
+
+                            Actions
+
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    @if (Model.Any())
+                    {
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+
+                                <td>
+
+                                    @item.Student?.Name
+
+                                </td>
+
+                                <td>
+
+                                    @item.AppointmentDate.ToString("dd/MM/yyyy")
+
+                                </td>
+
+                                <td>
+
+                                    @item.Time.ToString("HH:mm")
+
+                                </td>
+
+                                <td>
+
+                                    @item.Description
+
+                                </td>
+
+                                <td>
+
+                                    @switch (item.Status)
+                                    {
+                                        case AppointmentStatus.Pending:
+
+                                            <span class="badge bg-warning text-dark">
+
+                                                Pending
+
+                                            </span>
+
+                                            break;
+
+                                        case AppointmentStatus.Approved:
+
+                                            <span class="badge bg-success">
+
+                                                Approved
+
+                                            </span>
+
+                                            break;
+
+                                        case AppointmentStatus.Completed:
+
+                                            <span class="badge bg-primary">
+
+                                                Completed
+
+                                            </span>
+
+                                            break;
+
+                                        default:
+
+                                            <span class="badge bg-danger">
+
+                                                Cancelled
+
+                                            </span>
+
+                                            break;
+                                    }
+
+                                </td>
+
+                                <td>
+
+                                    <a asp-action="AppointmentDetails"
+                                       asp-route-id="@item.Id"
+                                       class="btn btn-outline-primary btn-sm">
+
+                                        Details
+
+                                    </a>
+
+                                    <a asp-action="Edit"
+                                       asp-route-id="@item.Id"
+                                       class="btn btn-sm btn-outline-success">
+
+                                        Edit
+
+                                    </a>
+
+                                </td>
+
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+
+                            <td colspan="6"
+                                class="text-center text-muted">
+
+                                No appointments found.
+
+                            </td>
+
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>

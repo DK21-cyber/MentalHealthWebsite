@@ -1,0 +1,234 @@
+﻿@model PW.Models.Appointment
+
+@{
+    ViewData["Title"] = "Appointment Details";
+}
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-8">
+
+            <div class="card shadow border-0">
+
+                <div class="card-header bg-primary text-white">
+
+                    <h3 class="mb-0">
+                        Appointment Details
+                    </h3>
+
+                </div>
+
+                <div class="card-body">
+
+                    <div class="row mb-3">
+
+                        <div class="col-md-6">
+
+                            <strong>Appointment ID</strong>
+
+                            <p>#@Model.Id</p>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <strong>Status</strong>
+
+                            <p>
+
+                                @switch (Model.Status)
+                                {
+                                    case AppointmentStatus.Pending:
+
+                                        <span class="badge bg-warning">
+                                            Pending
+                                        </span>
+
+                                        break;
+
+                                    case AppointmentStatus.Approved:
+
+                                        <span class="badge bg-success">
+                                            Approved
+                                        </span>
+
+                                        break;
+
+                                    case AppointmentStatus.Completed:
+
+                                        <span class="badge bg-primary">
+                                            Completed
+                                        </span>
+
+                                        break;
+
+                                    case AppointmentStatus.Cancelled:
+
+                                        <span class="badge bg-danger">
+                                            Cancelled
+                                        </span>
+
+                                        break;
+                                }
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <hr />
+
+                    <div class="row mb-3">
+
+                        <div class="col-md-6">
+
+                            <strong>Psychologist</strong>
+
+                            <p>
+
+                                @Model.Psychologist?.Name
+
+                            </p>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <strong>Specialty</strong>
+
+                            <p>
+
+                                @Model.Psychologist?.Specialty
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row mb-3">
+
+                        <div class="col-md-6">
+
+                            <strong>Date</strong>
+
+                            <p>
+
+                                @Model.AppointmentDate.ToString("dd/MM/yyyy")
+
+                            </p>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <strong>Time</strong>
+
+                            <p>
+
+                                @Model.Time.ToString("HH:mm")
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    @if (Model.ScheduleSlot != null)
+                    {
+                        <div class="row mb-3">
+
+                            <div class="col-md-6">
+
+                                <strong>Start Time</strong>
+
+                                <p>
+
+                                    @Model.ScheduleSlot.StartTime.ToString("dd/MM/yyyy HH:mm")
+
+                                </p>
+
+                            </div>
+
+                            <div class="col-md-6">
+
+                                <strong>End Time</strong>
+
+                                <p>
+
+                                    @Model.ScheduleSlot.EndTime.ToString("HH:mm")
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <strong>Schedule Status</strong>
+
+                            <p>
+
+                                @Model.ScheduleSlot.Status
+
+                            </p>
+
+                        </div>
+                    }
+
+                    <div class="mb-4">
+
+                        <strong>Description</strong>
+
+                        <div class="border rounded p-3 bg-light">
+
+                            @(string.IsNullOrWhiteSpace(Model.Description)
+                                                        ? "No description provided."
+                                                        : Model.Description)
+
+                        </div>
+
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+
+                        <a asp-action="Schedule"
+                           class="btn btn-secondary">
+
+                            Back
+
+                        </a>
+
+                        @if (Model.Status == AppointmentStatus.Pending)
+                        {
+                            <form asp-action="Cancel"
+                                  asp-route-id="@Model.Id"
+                                  method="post">
+
+                                @Html.AntiForgeryToken()
+
+                                <button class="btn btn-danger"
+                                        onclick="return confirm('Are you sure you want to cancel this appointment?')">
+
+                                    Cancel Appointment
+
+                                </button>
+
+                            </form>
+                        }
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

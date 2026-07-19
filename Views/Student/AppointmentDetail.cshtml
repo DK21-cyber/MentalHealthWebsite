@@ -1,0 +1,186 @@
+﻿@model PW.Models.ViewModels.AppointmentDetailViewModel
+
+@{
+    ViewData["Title"] = "Appointment Details";
+}
+
+<div class="container py-4">
+
+    <div class="card shadow">
+
+        <div class="card-header">
+
+            <h3>
+
+                Appointment Details
+
+            </h3>
+
+        </div>
+
+        <div class="card-body">
+
+            <table class="table table-bordered">
+
+                <tr>
+
+                    <th width="220">
+
+                        Psychologist
+
+                    </th>
+
+                    <td>
+
+                        @Model.PsychologistName
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <th>
+
+                        Specialty
+
+                    </th>
+
+                    <td>
+
+                        @Model.Specialty
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <th>
+
+                        Email
+
+                    </th>
+
+                    <td>
+
+                        @Model.Email
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <th>
+
+                        Phone
+
+                    </th>
+
+                    <td>
+
+                        @Model.Phone
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <th>
+
+                        Appointment Date
+
+                    </th>
+
+                    <td>
+
+                        @Model.AppointmentDate.ToString("dd/MM/yyyy")
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <th>
+
+                        Time
+
+                    </th>
+
+                    <td>
+
+                        @Model.Time.ToString("HH:mm")
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <th>
+
+                        Status
+
+                    </th>
+
+                    <td>
+
+                        @Model.Status
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <th>
+
+                        Description
+
+                    </th>
+
+                    <td>
+
+                        @Model.Description
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <th>
+
+                        Psychologist Notes
+
+                    </th>
+
+                    <td>
+
+                        @Model.Notes
+
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="card-footer text-end">
+
+            <a asp-action="AppointmentHistory"
+               class="btn btn-secondary">
+
+                Back
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>

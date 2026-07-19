@@ -1,0 +1,243 @@
+﻿@{
+    Layout = "_LayoutAdmin";
+    ViewData["Title"] = "Edit User";
+}
+
+<main class="dashboard-content">
+
+    <div class="container-fluid px-3 px-lg-4 py-4">
+
+        <div class="page-heading">
+
+            <div class="page-heading-copy">
+
+                <span class="page-icon">
+                    <i class="bi bi-pencil-square"></i>
+                </span>
+
+                <div>
+
+                    <p class="eyebrow mb-1">
+                        User Management
+                    </p>
+
+                    <h1 class="h3 mb-1">
+                        Edit User
+                    </h1>
+
+                    <p class="text-muted mb-0">
+                        Update user account information.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="heading-actions">
+
+                <a asp-action="Details"
+                   class="btn btn-outline-secondary btn-sm">
+
+                    <i class="bi bi-arrow-left"></i>
+                    Back
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <section class="row g-3">
+
+            <div class="col-xl-8">
+
+                <form method="post" class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2 class="h5 mb-1 section-title">
+
+                                <i class="bi bi-person-gear"></i>
+
+                                <span>User Information</span>
+
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row g-3">
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+                                Full Name
+                            </label>
+
+                            <input class="form-control"
+                                   value="Nguyễn Văn A">
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+                                Username
+                            </label>
+
+                            <input class="form-control"
+                                   value="admin01">
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+                                Email
+                            </label>
+
+                            <input class="form-control"
+                                   value="admin@uef.edu.vn">
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+                                Phone Number
+                            </label>
+
+                            <input class="form-control"
+                                   value="0901234567">
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+                                Role
+                            </label>
+
+                            <select class="form-select">
+
+                                <option selected>
+                                    Administrator
+                                </option>
+
+                                <option>
+                                    Psychologist
+                                </option>
+
+                                <option>
+                                    Student
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+                                Status
+                            </label>
+
+                            <select class="form-select">
+
+                                <option selected>
+                                    Active
+                                </option>
+
+                                <option>
+                                    Inactive
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="col-12">
+
+                            <label class="form-label">
+                                Notes
+                            </label>
+
+                            <textarea class="form-control"
+                                      rows="4">System administrator account</textarea>
+
+                        </div>
+
+                    </div>
+
+                    <div class="d-flex justify-content-end gap-2 mt-4">
+
+                        <a asp-action="Index"
+                           class="btn btn-outline-secondary">
+
+                            Cancel
+
+                        </a>
+
+                        <button type="submit"
+                                class="btn btn-primary">
+
+                            <i class="bi bi-save"></i>
+
+                            Save Changes
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+            <div class="col-xl-4">
+
+                <div class="panel">
+
+                    <h2 class="h5 mb-3 section-title">
+
+                        <i class="bi bi-info-circle"></i>
+
+                        <span>Account Summary</span>
+
+                    </h2>
+
+                    <div class="mini-card mb-3">
+
+                        <span>Created Date</span>
+
+                        <strong>15/01/2026</strong>
+
+                    </div>
+
+                    <div class="mini-card mb-3">
+
+                        <span>Last Login</span>
+
+                        <strong>Today</strong>
+
+                    </div>
+
+                    <div class="mini-card">
+
+                        <span>Account Status</span>
+
+                        <strong>Active</strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>

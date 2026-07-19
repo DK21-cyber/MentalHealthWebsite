@@ -1,0 +1,137 @@
+﻿@model IEnumerable<PW.Models.Appointment>
+
+@using PW.Models
+
+@{
+    ViewData["Title"] = "Appointment History";
+}
+
+<div class="container py-4">
+
+    <div class="d-flex justify-content-between mb-4">
+
+        <h2>Appointment History</h2>
+
+        <a asp-action="Index"
+           class="btn btn-secondary">
+
+            Back
+
+        </a>
+
+    </div>
+
+    <div class="card shadow">
+
+        <div class="card-body">
+
+            @if (!Model.Any())
+            {
+                <div class="alert alert-info">
+
+                    No appointments found.
+
+                </div>
+            }
+            else
+            {
+                <table class="table table-hover align-middle">
+
+                    <thead class="table-light">
+
+                        <tr>
+
+                            <th>Date</th>
+
+                            <th>Time</th>
+
+                            <th>Psychologist</th>
+
+                            <th>Specialty</th>
+
+                            <th>Status</th>
+
+                            <th></th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+
+                                <td>
+
+                                    @item.AppointmentDate.ToString("dd/MM/yyyy")
+
+                                </td>
+
+                                <td>
+
+                                    @item.Time.ToString("HH:mm")
+
+                                </td>
+
+                                <td>
+
+                                    @item.Psychologist?.Name
+
+                                </td>
+
+                                <td>
+
+                                    @item.Psychologist?.Specialty
+
+                                </td>
+
+                                <td>
+
+                                    @switch (item.Status)
+                                    {
+                                        case AppointmentStatus.Pending:
+                                            <span class="badge bg-warning">Pending</span>
+                                            break;
+
+                                        case AppointmentStatus.Approved:
+                                            <span class="badge bg-primary">Approved</span>
+                                            break;
+
+                                        case AppointmentStatus.Completed:
+                                            <span class="badge bg-success">Completed</span>
+                                            break;
+
+                                        case AppointmentStatus.Cancelled:
+                                            <span class="badge bg-danger">Cancelled</span>
+                                            break;
+                                    }
+
+                                </td>
+
+                                <td>
+
+                                    <a asp-action="Details"
+                                       asp-route-id="@item.Id"
+                                       class="btn btn-outline-primary btn-sm">
+
+                                        Details
+
+                                    </a>
+
+                                </td>
+
+                            </tr>
+                        }
+
+                    </tbody>
+
+                </table>
+            }
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,384 @@
+﻿@{
+    Layout = "_LayoutAdmin";
+    ViewData["Title"] = "AI Models";
+}
+
+<main class="dashboard-content">
+
+    <div class="container-fluid px-3 px-lg-4 py-4">
+
+        <!-- PAGE HEADER -->
+
+        <div class="page-heading">
+
+            <div class="page-heading-copy">
+
+                <span class="page-icon">
+                    <i class="bi bi-cpu-fill"></i>
+                </span>
+
+                <div>
+
+                    <p class="eyebrow mb-1">
+                        Machine Learning
+                    </p>
+
+                    <h1 class="h3 mb-1">
+                        AI Models
+                    </h1>
+
+                    <p class="text-muted mb-0">
+                        Monitor machine learning models used in mental health prediction.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- MODEL SUMMARY -->
+
+        <section class="row g-3 mt-1">
+
+            <div class="col-12 col-sm-6 col-xl-3">
+
+                <article class="metric-card metric-primary">
+
+                    <div class="metric-top">
+
+                        <span class="metric-label">
+                            Total Models
+                        </span>
+
+                        <span class="metric-icon">
+                            <i class="bi bi-cpu"></i>
+                        </span>
+
+                    </div>
+
+                    <div class="metric-value">
+                        11
+                    </div>
+
+                    <div class="metric-meta">
+
+                        <span class="text-success">
+                            Active
+                        </span>
+
+                        <span>
+                            Models
+                        </span>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <div class="col-12 col-sm-6 col-xl-3">
+
+                <article class="metric-card metric-success">
+
+                    <div class="metric-top">
+
+                        <span class="metric-label">
+                            Best Accuracy
+                        </span>
+
+                        <span class="metric-icon">
+                            <i class="bi bi-award"></i>
+                        </span>
+
+                    </div>
+
+                    <div class="metric-value">
+                        92%
+                    </div>
+
+                    <div class="metric-meta">
+
+                        <span>
+                            Neural Network
+                        </span>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <div class="col-12 col-sm-6 col-xl-3">
+
+                <article class="metric-card metric-warning">
+
+                    <div class="metric-top">
+
+                        <span class="metric-label">
+                            Best Anxiety
+                        </span>
+
+                        <span class="metric-icon">
+                            <i class="bi bi-emoji-frown"></i>
+                        </span>
+
+                    </div>
+
+                    <div class="metric-value">
+                        KNN
+                    </div>
+
+                    <div class="metric-meta">
+
+                        <span>
+                            Anxiety Prediction
+                        </span>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <div class="col-12 col-sm-6 col-xl-3">
+
+                <article class="metric-card metric-danger">
+
+                    <div class="metric-top">
+
+                        <span class="metric-label">
+                            Best Stress
+                        </span>
+
+                        <span class="metric-icon">
+                            <i class="bi bi-graph-up"></i>
+                        </span>
+
+                    </div>
+
+                    <div class="metric-value">
+                        SVM
+                    </div>
+
+                    <div class="metric-meta">
+
+                        <span>
+                            Stress Prediction
+                        </span>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- MODEL TABLE -->
+
+        <section class="panel mt-3">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <h2 class="h5 mb-1 section-title">
+
+                        <i class="bi bi-table"></i>
+
+                        <span>
+                            Model Performance
+                        </span>
+
+                    </h2>
+
+                    <p class="text-muted mb-0">
+
+                        Machine learning models used in the research.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="table-responsive">
+
+                <table class="table align-middle mb-0">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Model</th>
+
+                            <th>Target</th>
+
+                            <th>Accuracy</th>
+
+                            <th>Precision</th>
+
+                            <th>Recall</th>
+
+                            <th>F1 Score</th>
+
+                            <th>Status</th>
+
+                            <th class="text-end">
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>Logistic Regression</td>
+
+                            <td>Depression</td>
+
+                            <td>89%</td>
+
+                            <td>0.89</td>
+
+                            <td>0.88</td>
+
+                            <td>0.88</td>
+
+                            <td>
+                                <span class="badge text-bg-success">
+                                    Active
+                                </span>
+                            </td>
+
+                            <td class="text-end">
+
+                                <a asp-action="Details"
+                                   asp-route-id="1"
+                                   class="btn btn-light btn-sm">
+
+                                    View
+
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>KNN</td>
+
+                            <td>Anxiety</td>
+
+                            <td>90%</td>
+
+                            <td>0.90</td>
+
+                            <td>0.89</td>
+
+                            <td>0.89</td>
+
+                            <td>
+                                <span class="badge text-bg-success">
+                                    Active
+                                </span>
+                            </td>
+
+                            <td class="text-end">
+
+                                <a asp-action="Details"
+                                   asp-route-id="2"
+                                   class="btn btn-light btn-sm">
+
+                                    View
+
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>SVM</td>
+
+                            <td>Stress</td>
+
+                            <td>91%</td>
+
+                            <td>0.91</td>
+
+                            <td>0.90</td>
+
+                            <td>0.90</td>
+
+                            <td>
+                                <span class="badge text-bg-success">
+                                    Active
+                                </span>
+                            </td>
+
+                            <td class="text-end">
+
+                                <a asp-action="Details"
+                                   asp-route-id="3"
+                                   class="btn btn-light btn-sm">
+
+                                    View
+
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Neural Network</td>
+
+                            <td>Combined Label</td>
+
+                            <td>92.23%</td>
+
+                            <td>0.92</td>
+
+                            <td>0.92</td>
+
+                            <td>0.92</td>
+
+                            <td>
+                                <span class="badge text-bg-primary">
+                                    Best Model
+                                </span>
+                            </td>
+
+                            <td class="text-end">
+
+                                <a asp-action="Details"
+                                   asp-route-id="4"
+                                   class="btn btn-light btn-sm">
+
+                                    View
+
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>

@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"] - Admin Panel</title>
+
+    <link rel="stylesheet" href="~/css/admin/assets/css/bootstrap.min.css" />
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet"
+          href="~/css/admin/assets/css/style.css"
+          asp-append-version="true" />
+</head>
+
+<body>
+
+    <div class="admin-shell">
+
+        <!-- Sidebar -->
+
+        <aside class="admin-sidebar">
+
+            <div class="sidebar-header">
+
+                <a asp-area="Admin"
+                   asp-controller="Dashboard"
+                   asp-action="Index"
+                   class="brand-mark">
+
+                    <span class="brand-icon">
+                        <i class="bi bi-heart-pulse-fill"></i>
+                    </span>
+
+                    <span class="brand-copy">
+
+                        <span class="brand-title">
+                            Mental Health AI
+                        </span>
+
+                        <span class="brand-subtitle">
+                            Admin Panel
+                        </span>
+
+                    </span>
+
+                </a>
+
+            </div>
+
+            <nav class="sidebar-nav">
+
+                <a asp-area="Admin"
+                   asp-controller="Dashboard"
+                   asp-action="Index"
+                   class="nav-link">
+
+                    <i class="bi bi-speedometer2"></i>
+                    Dashboard
+
+                </a>
+
+                <a asp-area="Admin"
+                   asp-controller="Student"
+                   asp-action="Index"
+                   class="nav-link">
+
+                    <i class="bi bi-people"></i>
+                    Students
+
+                </a>
+
+                <a asp-area="Admin"
+                   asp-controller="Survey"
+                   asp-action="Index"
+                   class="nav-link">
+
+                    <i class="bi bi-ui-checks-grid"></i>
+                    Surveys
+
+                </a>
+
+                <a asp-area="Admin"
+                   asp-controller="Result"
+                   asp-action="Index"
+                   class="nav-link">
+
+                    <i class="bi bi-bar-chart"></i>
+                    Results
+
+                </a>
+
+                <a asp-area="Admin"
+                   asp-controller="Model"
+                   asp-action="Index"
+                   class="nav-link">
+
+                    <i class="bi bi-cpu"></i>
+                    AI Models
+
+                </a>
+
+                <form asp-area="" 
+                      asp-controller="Account"
+                      asp-action="Logout"
+                      method="post" 
+                      onsubmit="return confirm('Bạn có chắc muốn đăng xuất?');">
+
+                    @Html.AntiForgeryToken()
+
+                    <button type="submit"
+                            class="nav-link logout-btn">
+
+                        <i class="bi bi-box-arrow-right"></i>
+
+                        Đăng xuất
+
+                    </button>
+
+                </form>
+
+            </nav>
+
+        </aside>
+
+        <!-- Main -->
+
+        <div class="admin-main">
+
+            <!-- Topbar -->
+
+            <nav class="admin-navbar">
+
+                <div class="navbar-title">
+
+                    <h4>@ViewData["Title"]</h4>
+
+                </div>
+
+                <div class="navbar-user">
+
+                    <i class="bi bi-person-circle"></i>
+
+                    <span>
+                        Admin
+                    </span>
+
+                </div>
+
+            </nav>
+
+            <!-- Content -->
+
+            <main class="dashboard-content">
+
+                @RenderBody()
+
+            </main>
+
+            <!-- Footer -->
+
+            <footer class="admin-footer">
+
+                <p>
+                    © 2026 Mental Health AI Management System
+                </p>
+
+            </footer>
+
+        </div>
+
+    </div>
+
+    <script src="~/css/admin/assets/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

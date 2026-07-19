@@ -1,0 +1,253 @@
+﻿@model PW.Models.Appointment
+
+@{
+    ViewData["Title"] = "Appointment Details";
+}
+
+<div class="container py-5">
+
+    <div class="card shadow">
+
+        <div class="card-header d-flex justify-content-between">
+
+            <h3>
+
+                Appointment Details
+
+            </h3>
+
+            <a asp-action="Appointments"
+               class="btn btn-secondary">
+
+                Back
+
+            </a>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <h5 class="mb-3">
+
+                        Student Information
+
+                    </h5>
+
+                    <table class="table">
+
+                        <tr>
+
+                            <th width="180">
+
+                                Student
+
+                            </th>
+
+                            <td>
+
+                                @Model.Student?.Name
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>
+
+                                Appointment Date
+
+                            </th>
+
+                            <td>
+
+                                @Model.AppointmentDate.ToString("dd/MM/yyyy")
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>
+
+                                Time
+
+                            </th>
+
+                            <td>
+
+                                @Model.Time.ToString("HH:mm")
+
+                            </td>
+
+                        </tr>
+
+                    </table>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <h5 class="mb-3">
+
+                        Consultation Information
+
+                    </h5>
+
+                    <table class="table">
+
+                        <tr>
+
+                            <th width="180">
+
+                                Psychologist
+
+                            </th>
+
+                            <td>
+
+                                @Model.Psychologist?.Name
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>
+
+                                Schedule Slot
+
+                            </th>
+
+                            <td>
+
+                                @Model.ScheduleSlot?.StartTime.ToString("dd/MM/yyyy HH:mm")
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>
+
+                                Status
+
+                            </th>
+
+                            <td>
+
+                                @switch (Model.Status)
+                                {
+                                    case AppointmentStatus.Pending:
+
+                                        <span class="badge bg-warning text-dark">
+
+                                            Pending
+
+                                        </span>
+
+                                        break;
+
+                                    case AppointmentStatus.Approved:
+
+                                        <span class="badge bg-success">
+
+                                            Approved
+
+                                        </span>
+
+                                        break;
+
+                                    case AppointmentStatus.Completed:
+
+                                        <span class="badge bg-primary">
+
+                                            Completed
+
+                                        </span>
+
+                                        break;
+
+                                    default:
+
+                                        <span class="badge bg-danger">
+
+                                            Cancelled
+
+                                        </span>
+
+                                        break;
+                                }
+
+                            </td>
+
+                        </tr>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+            <hr />
+
+            <h5>
+
+                Description
+
+            </h5>
+
+            <div class="border rounded p-3 bg-light">
+
+                @(string.IsNullOrWhiteSpace(Model.Description)
+                                ? "No description."
+                                : Model.Description)
+
+            </div>
+
+            <div class="mt-4">
+
+                @if (Model.Status == AppointmentStatus.Pending)
+                {
+                    <a asp-action="Approve"
+                       asp-route-id="@Model.Id"
+                       class="btn btn-success">
+
+                        Approve
+
+                    </a>
+
+                    <a asp-action="Cancel"
+                       asp-route-id="@Model.Id"
+                       class="btn btn-danger">
+
+                        Cancel
+
+                    </a>
+                }
+
+                @if (Model.Status == AppointmentStatus.Approved)
+                {
+                    <a asp-action="Complete"
+                       asp-route-id="@Model.Id"
+                       class="btn btn-primary">
+
+                        Mark as Completed
+
+                    </a>
+                }
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

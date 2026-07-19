@@ -1,0 +1,273 @@
+﻿@model IEnumerable<PW.Models.ScheduleSlot>
+
+@{
+    ViewData["Title"] = "My Schedule";
+}
+
+<div class="container py-5">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+
+            <h2 class="fw-bold">
+
+                My Schedule
+
+            </h2>
+
+            <p class="text-muted">
+
+                View and manage your available consultation schedule.
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Statistics -->
+
+    <div class="row g-4 mb-4">
+
+        <div class="col-lg-3">
+
+            <div class="card shadow-sm border-0">
+
+                <div class="card-body text-center">
+
+                    <h2 class="text-primary">
+
+                        @Model.Count()
+
+                    </h2>
+
+                    <p class="mb-0">
+
+                        Total Slots
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-3">
+
+            <div class="card shadow-sm border-0">
+
+                <div class="card-body text-center">
+
+                    <h2 class="text-success">
+
+                        @Model.Count(x => x.Status == SlotStatus.Available)
+
+                    </h2>
+
+                    <p class="mb-0">
+
+                        Available
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-3">
+
+            <div class="card shadow-sm border-0">
+
+                <div class="card-body text-center">
+
+                    <h2 class="text-warning">
+
+                        @Model.Count(x => x.Status == SlotStatus.Booked)
+
+                    </h2>
+
+                    <p class="mb-0">
+
+                        Booked
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-3">
+
+            <div class="card shadow-sm border-0">
+
+                <div class="card-body text-center">
+
+                    <h2 class="text-info">
+
+                        @Model.Count(x => x.Status == SlotStatus.Completed)
+
+                    </h2>
+
+                    <p class="mb-0">
+
+                        Completed
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Schedule Table -->
+
+    <div class="card shadow-sm">
+
+        <div class="card-header">
+
+            <h5 class="mb-0">
+
+                Schedule Slots
+
+            </h5>
+
+        </div>
+
+        <div class="card-body">
+
+            <table class="table table-hover align-middle">
+
+                <thead class="table-light">
+
+                    <tr>
+
+                        <th>Date</th>
+
+                        <th>Start Time</th>
+
+                        <th>End Time</th>
+
+                        <th>Status</th>
+
+                        <th>Notes</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    @if (Model.Any())
+                    {
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+
+                                <td>
+
+                                    @item.StartTime.ToString("dd/MM/yyyy")
+
+                                </td>
+
+                                <td>
+
+                                    @item.StartTime.ToString("HH:mm")
+
+                                </td>
+
+                                <td>
+
+                                    @item.EndTime.ToString("HH:mm")
+
+                                </td>
+
+                                <td>
+
+                                    @switch (item.Status)
+                                    {
+                                        case SlotStatus.Available:
+
+                                            <span class="badge bg-success">
+
+                                                Available
+
+                                            </span>
+
+                                            break;
+
+                                        case SlotStatus.Booked:
+
+                                            <span class="badge bg-warning text-dark">
+
+                                                Booked
+
+                                            </span>
+
+                                            break;
+
+                                        case SlotStatus.Completed:
+
+                                            <span class="badge bg-primary">
+
+                                                Completed
+
+                                            </span>
+
+                                            break;
+
+                                        default:
+
+                                            <span class="badge bg-danger">
+
+                                                Cancelled
+
+                                            </span>
+
+                                            break;
+                                    }
+
+                            </td>
+
+                            <td>
+
+                                @(string.IsNullOrWhiteSpace(item.Notes)
+                                                            ? "-"
+                                                            : item.Notes)
+
+                        </td>
+
+                            </tr>
+                                        }
+                    }
+                    else
+                    {
+                        <tr>
+
+                            <td colspan="5"
+                                class="text-center text-muted">
+
+                                No schedule slots found.
+
+                            </td>
+
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>

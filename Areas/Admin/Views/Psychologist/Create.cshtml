@@ -1,0 +1,257 @@
+﻿@{
+    Layout = "_LayoutAdmin";
+    ViewData["Title"] = "Add Psychologist";
+}
+
+<main class="dashboard-content">
+
+    <div class="container-fluid px-3 px-lg-4 py-4">
+
+        <!-- PAGE HEADER -->
+
+        <div class="page-heading">
+
+            <div class="page-heading-copy">
+
+                <span class="page-icon">
+                    <i class="bi bi-person-plus-fill"></i>
+                </span>
+
+                <div>
+
+                    <p class="eyebrow mb-1">
+                        Management
+                    </p>
+
+                    <h1 class="h3 mb-1">
+                        Add Psychologist
+                    </h1>
+
+                    <p class="text-muted mb-0">
+                        Thêm chuyên viên tâm lý mới vào hệ thống.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="heading-actions">
+
+                <a asp-action="Index"
+                   class="btn btn-outline-secondary btn-sm">
+
+                    <i class="bi bi-arrow-left"></i>
+                    Back
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- FORM -->
+
+        <section class="row g-3">
+
+            <div class="col-12 col-xl-8">
+
+                <form class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2 class="h5 mb-1 section-title">
+
+                                <i class="bi bi-person-vcard"></i>
+
+                                <span>
+                                    Psychologist Information
+                                </span>
+
+                            </h2>
+
+                            <p class="text-muted mb-0">
+                                Nhập thông tin chuyên viên tâm lý.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row g-3">
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+                                Full Name
+                            </label>
+
+                            <input type="text"
+                                   class="form-control"
+                                   placeholder="Nguyễn Minh Anh">
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+                                Email
+                            </label>
+
+                            <input type="email"
+                                   class="form-control"
+                                   placeholder="example@uef.edu.vn">
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+                                Phone Number
+                            </label>
+
+                            <input type="text"
+                                   class="form-control"
+                                   placeholder="0901234567">
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+                                Qualification
+                            </label>
+
+                            <input type="text"
+                                   class="form-control"
+                                   placeholder="Thạc sĩ Tâm lý học">
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+                                Years of Experience
+                            </label>
+
+                            <input type="number"
+                                   class="form-control"
+                                   placeholder="5">
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+                                Status
+                            </label>
+
+                            <select class="form-select">
+
+                                <option>
+                                    Active
+                                </option>
+
+                                <option>
+                                    Inactive
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="col-12">
+
+                            <label class="form-label">
+                                Office Location
+                            </label>
+
+                            <input type="text"
+                                   class="form-control"
+                                   placeholder="Building A - Room 203">
+
+                        </div>
+
+                        <div class="col-12">
+
+                            <label class="form-label">
+                                Specialization
+                            </label>
+
+                            <textarea class="form-control"
+                                      rows="4"
+                                      placeholder="Tư vấn học đường, hỗ trợ tâm lý sinh viên..."></textarea>
+
+                        </div>
+
+                    </div>
+
+                    <div class="d-flex justify-content-end gap-2 mt-4">
+
+                        <a asp-action="Index"
+                           class="btn btn-outline-secondary">
+
+                            Cancel
+
+                        </a>
+
+                        <button type="submit"
+                                class="btn btn-primary">
+
+                            <i class="bi bi-save"></i>
+                            Save Psychologist
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+            <!-- SIDE PANEL -->
+
+            <div class="col-12 col-xl-4">
+
+                <div class="panel h-100">
+
+                    <h2 class="h5 mb-3 section-title">
+
+                        <i class="bi bi-info-circle"></i>
+
+                        <span>
+                            Notes
+                        </span>
+
+                    </h2>
+
+                    <div class="alert alert-primary">
+
+                        Chuyên viên sẽ được cấp quyền truy cập
+                        hệ thống tư vấn sinh viên.
+
+                    </div>
+
+                    <div class="alert alert-warning">
+
+                        Hãy đảm bảo email là duy nhất trước khi lưu.
+
+                    </div>
+
+                    <div class="alert alert-success">
+
+                        Sau khi tạo thành công, chuyên viên có thể
+                        quản lý hồ sơ và lịch hẹn tư vấn.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>

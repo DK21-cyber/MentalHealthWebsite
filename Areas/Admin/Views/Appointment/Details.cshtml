@@ -1,0 +1,371 @@
+﻿@{
+    Layout = "_LayoutAdmin";
+    ViewData["Title"] = "Appointment Details";
+}
+
+<main class="dashboard-content">
+
+    <div class="container-fluid px-3 px-lg-4 py-4">
+
+        <!-- PAGE HEADER -->
+
+        <div class="page-heading">
+
+            <div class="page-heading-copy">
+
+                <span class="page-icon">
+                    <i class="bi bi-calendar-event"></i>
+                </span>
+
+                <div>
+
+                    <p class="eyebrow mb-1">
+                        Appointment Management
+                    </p>
+
+                    <h1 class="h3 mb-1">
+                        Appointment Details
+                    </h1>
+
+                    <p class="text-muted mb-0">
+                        View consultation schedule information.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="heading-actions">
+
+                <a asp-action="Index"
+                   class="btn btn-outline-secondary btn-sm">
+
+                    <i class="bi bi-arrow-left"></i>
+                    Back
+
+                </a>
+
+                <a asp-action="Edit"
+                   asp-route-id="1"
+                   class="btn btn-primary btn-sm">
+
+                    <i class="bi bi-pencil-square"></i>
+                    Edit
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <section class="row g-3">
+
+            <!-- LEFT -->
+
+            <div class="col-xl-4">
+
+                <div class="panel h-100 text-center profile-card">
+
+                    <div class="profile-cover">
+
+                        <img src="~/images/appointment-banner.jpg"
+                             alt="Appointment">
+
+                    </div>
+
+                    <div class="profile-hero">
+
+                        <div class="avatar-img avatar-xl profile-photo">
+
+                            <i class="bi bi-calendar-check fs-1"></i>
+
+                        </div>
+
+                        <h2 class="h5 mb-1">
+                            Counseling Session
+                        </h2>
+
+                        <p class="text-muted mb-3">
+                            Mental Health Consultation
+                        </p>
+
+                        <span class="badge text-bg-success">
+
+                            Booked
+
+                        </span>
+
+                    </div>
+
+                    <div class="info-list mt-4 text-start">
+
+                        <div>
+
+                            <span>Date</span>
+
+                            <strong>15/06/2026</strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Time</span>
+
+                            <strong>08:00 - 09:00</strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Location</span>
+
+                            <strong>Room A301</strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Mode</span>
+
+                            <strong>Face-to-Face</strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT -->
+
+            <div class="col-xl-8">
+
+                <!-- OVERVIEW -->
+
+                <div class="panel mb-3">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2 class="h5 mb-1 section-title">
+
+                                <i class="bi bi-info-circle"></i>
+
+                                <span>
+                                    Appointment Overview
+                                </span>
+
+                            </h2>
+
+                            <p class="text-muted mb-0">
+                                Consultation schedule information.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row g-3">
+
+                        <div class="col-md-4">
+
+                            <div class="mini-card">
+
+                                <span>Status</span>
+
+                                <strong>Booked</strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <div class="mini-card">
+
+                                <span>Duration</span>
+
+                                <strong>60 Minutes</strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <div class="mini-card">
+
+                                <span>Type</span>
+
+                                <strong>Individual Counseling</strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- PSYCHOLOGIST -->
+
+                <div class="panel mb-3">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2 class="h5 mb-1 section-title">
+
+                                <i class="bi bi-person-badge"></i>
+
+                                <span>
+                                    Psychologist Information
+                                </span>
+
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <div class="info-list">
+
+                        <div>
+
+                            <span>Name</span>
+
+                            <strong>Dr. Nguyễn Thị Lan</strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Email</span>
+
+                            <strong>lan.nguyen@uef.edu.vn</strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Phone</span>
+
+                            <strong>0901234567</strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Specialization</span>
+
+                            <strong>Student Counseling</strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- STUDENT -->
+
+                <div class="panel mb-3">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2 class="h5 mb-1 section-title">
+
+                                <i class="bi bi-mortarboard"></i>
+
+                                <span>
+                                    Student Information
+                                </span>
+
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <div class="info-list">
+
+                        <div>
+
+                            <span>Student Name</span>
+
+                            <strong>Nguyễn Văn A</strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Student ID</span>
+
+                            <strong>202300001</strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Email</span>
+
+                            <strong>student@uef.edu.vn</strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Faculty</span>
+
+                            <strong>Information Technology</strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- NOTES -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2 class="h5 mb-1 section-title">
+
+                                <i class="bi bi-journal-text"></i>
+
+                                <span>
+                                    Consultation Notes
+                                </span>
+
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <p class="mb-0">
+
+                        Student reported academic stress and difficulty
+                        balancing study and personal life. Initial
+                        consultation scheduled for assessment and
+                        support planning.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>

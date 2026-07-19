@@ -1,0 +1,156 @@
+﻿@model IEnumerable<PW.Models.ViewModels.PsychologicalProfileViewModel>
+
+@{
+    ViewData["Title"] = "Psychological Profile";
+}
+
+<div class="container py-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <h2>
+
+            Psychological Profile
+
+        </h2>
+
+    </div>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info">
+
+            No psychological profile has been created.
+
+        </div>
+    }
+    else
+    {
+        foreach (var item in Model)
+        {
+            <div class="card shadow-sm mb-4">
+
+                <div class="card-header">
+
+                    <h5 class="mb-0">
+
+                        Assessment
+
+                        <small class="text-muted">
+
+                            (@item.CreatedAt.ToString("dd/MM/yyyy"))
+
+                        </small>
+
+                    </h5>
+
+                </div>
+
+                <div class="card-body">
+
+                    <table class="table table-bordered">
+
+                        <tr>
+
+                            <th width="220">
+
+                                Psychologist
+
+                            </th>
+
+                            <td>
+
+                                @item.PsychologistName
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>
+
+                                Status
+
+                            </th>
+
+                            <td>
+
+                                @switch (item.Status)
+                                {
+                                    case ProfileStatus.Normal:
+                                        <span class="badge bg-success">
+                                            Normal
+                                        </span>
+                                        break;
+
+                                    case ProfileStatus.Monitoring:
+                                        <span class="badge bg-warning">
+                                            Monitoring
+                                        </span>
+                                        break;
+
+                                    case ProfileStatus.Counseling:
+                                        <span class="badge bg-primary">
+                                            Counseling
+                                        </span>
+                                        break;
+
+                                    case ProfileStatus.Risking:
+                                        <span class="badge bg-primary">
+                                            Risking
+                                        </span>
+                                        break;
+
+                                    default:
+                                        <span class="badge bg-danger">
+                                            High Risk
+                                        </span>
+                                        break;
+                                }
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>
+
+                                Diagnosis
+
+                            </th>
+
+                            <td>
+
+                                @item.Diagnosis
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <th>
+
+                                Notes
+
+                            </th>
+
+                            <td>
+
+                                @item.Notes
+
+                            </td>
+
+                        </tr>
+
+                    </table>
+
+                </div>
+
+            </div>
+        }
+    }
+
+</div>

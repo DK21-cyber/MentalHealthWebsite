@@ -1,0 +1,369 @@
+﻿@{
+    Layout = "_LayoutAdmin";
+    ViewData["Title"] = "User Management";
+}
+
+<main class="dashboard-content">
+
+    ```
+    <div class="container-fluid px-3 px-lg-4 py-4">
+
+        <!-- HEADER -->
+
+        <div class="page-heading">
+
+            <div class="page-heading-copy">
+
+                <span class="page-icon">
+                    <i class="bi bi-people-fill"></i>
+                </span>
+
+                <div>
+
+                    <p class="eyebrow mb-1">
+                        Administration
+                    </p>
+
+                    <h1 class="h3 mb-1">
+                        User Management
+                    </h1>
+
+                    <p class="text-muted mb-0">
+                        Quản lý tài khoản sinh viên, chuyên viên tâm lý và quản trị viên.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="heading-actions">
+
+                <a asp-action="Create"
+                   class="btn btn-primary btn-sm">
+
+                    <i class="bi bi-person-plus-fill"></i>
+
+                    Add User
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- STATISTICS -->
+
+        <section class="row g-3 mt-1">
+
+            <div class="col-md-3">
+
+                <article class="metric-card metric-primary">
+
+                    <div class="metric-top">
+
+                        <span class="metric-label">
+                            Total Users
+                        </span>
+
+                        <span class="metric-icon">
+                            <i class="bi bi-people"></i>
+                        </span>
+
+                    </div>
+
+                    <div class="metric-value">
+                        548
+                    </div>
+
+                    <div class="metric-meta">
+
+                        <span class="text-success">
+                            Active Accounts
+                        </span>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <article class="metric-card metric-success">
+
+                    <div class="metric-top">
+
+                        <span class="metric-label">
+                            Students
+                        </span>
+
+                        <span class="metric-icon">
+                            <i class="bi bi-mortarboard"></i>
+                        </span>
+
+                    </div>
+
+                    <div class="metric-value">
+                        515
+                    </div>
+
+                </article>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <article class="metric-card metric-warning">
+
+                    <div class="metric-top">
+
+                        <span class="metric-label">
+                            Psychologists
+                        </span>
+
+                        <span class="metric-icon">
+                            <i class="bi bi-heart-pulse"></i>
+                        </span>
+
+                    </div>
+
+                    <div class="metric-value">
+                        28
+                    </div>
+
+                </article>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <article class="metric-card metric-danger">
+
+                    <div class="metric-top">
+
+                        <span class="metric-label">
+                            Administrators
+                        </span>
+
+                        <span class="metric-icon">
+                            <i class="bi bi-shield-lock"></i>
+                        </span>
+
+                    </div>
+
+                    <div class="metric-value">
+                        5
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- TABLE -->
+
+        <section class="panel mt-3">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <h2 class="h5 mb-1 section-title">
+
+                        <i class="bi bi-table"></i>
+
+                        <span>
+                            User List
+                        </span>
+
+                    </h2>
+
+                    <p class="text-muted mb-0">
+
+                        Danh sách tài khoản trong hệ thống.
+
+                    </p>
+
+                </div>
+
+                <div>
+
+                    <input class="form-control form-control-sm"
+                           type="search"
+                           placeholder="Search User...">
+
+                </div>
+
+            </div>
+
+            <div class="table-responsive">
+
+                <table class="table align-middle">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>User</th>
+
+                            <th>Role</th>
+
+                            <th>Email</th>
+
+                            <th>Status</th>
+
+                            <th>Created</th>
+
+                            <th class="text-end">
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>
+
+                                <div class="d-flex align-items-center gap-2">
+
+                                    <img src="https://via.placeholder.com/40"
+                                         class="rounded-circle">
+
+                                    <div>
+
+                                        <div class="fw-semibold">
+                                            Nguyễn Văn A
+                                        </div>
+
+                                        <small class="text-muted">
+                                            SV20230001
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+                                Student
+                            </td>
+
+                            <td>
+                                student1@uef.edu.vn
+                            </td>
+
+                            <td>
+
+                                <span class="badge text-bg-success">
+                                    Active
+                                </span>
+
+                            </td>
+
+                            <td>
+                                12/01/2026
+                            </td>
+
+                            <td class="text-end">
+
+                                <a asp-action="Details"
+                                   class="btn btn-light btn-sm">
+
+                                    View
+
+                                </a>
+
+                                <a asp-action="Edit"
+                                   class="btn btn-warning btn-sm">
+
+                                    Edit
+
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>
+
+                                <div class="d-flex align-items-center gap-2">
+
+                                    <img src="https://via.placeholder.com/40"
+                                         class="rounded-circle">
+
+                                    <div>
+
+                                        <div class="fw-semibold">
+                                            ThS. Nguyễn Minh Anh
+                                        </div>
+
+                                        <small class="text-muted">
+                                            PSY001
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+                                Psychologist
+                            </td>
+
+                            <td>
+                                anh.nguyen@uef.edu.vn
+                            </td>
+
+                            <td>
+
+                                <span class="badge text-bg-success">
+                                    Active
+                                </span>
+
+                            </td>
+
+                            <td>
+                                20/02/2026
+                            </td>
+
+                            <td class="text-end">
+
+                                <a asp-action="Details"
+                                   class="btn btn-light btn-sm">
+
+                                    View
+
+                                </a>
+
+                                <a asp-action="Edit"
+                                   class="btn btn-warning btn-sm">
+
+                                    Edit
+
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </div>
+    ```
+
+</main>

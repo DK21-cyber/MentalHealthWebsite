@@ -1,0 +1,331 @@
+﻿@{
+    Layout = "_LayoutAdmin";
+    ViewData["Title"] = "Survey Details";
+}
+
+<main class="dashboard-content">
+
+    <div class="container-fluid px-3 px-lg-4 py-4">
+
+        <!-- PAGE HEADER -->
+
+        <div class="page-heading">
+
+            <div class="page-heading-copy">
+
+                <span class="page-icon">
+                    <i class="bi bi-ui-checks-grid"></i>
+                </span>
+
+                <div>
+
+                    <p class="eyebrow mb-1">
+                        Mental Health System
+                    </p>
+
+                    <h1 class="h3 mb-1">
+                        Survey Details
+                    </h1>
+
+                    <p class="text-muted mb-0">
+                        Review survey information and question list.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="heading-actions">
+
+                <a asp-action="Index"
+                   class="btn btn-outline-secondary btn-sm">
+
+                    <i class="bi bi-arrow-left"></i>
+                    Back
+
+                </a>
+
+                <a asp-action="Edit"
+                   asp-route-id="1"
+                   class="btn btn-primary btn-sm">
+
+                    <i class="bi bi-pencil-square"></i>
+                    Edit Survey
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <section class="row g-3">
+
+            <!-- LEFT -->
+
+            <div class="col-xl-4">
+
+                <div class="panel h-100">
+
+                    <div class="text-center mb-4">
+
+                        <div class="display-4 text-primary">
+
+                            <i class="bi bi-clipboard2-pulse"></i>
+
+                        </div>
+
+                        <h4 class="mt-3">
+                            DASS-21 Survey
+                        </h4>
+
+                        <p class="text-muted">
+                            Depression, Anxiety and Stress Scale
+                        </p>
+
+                        <span class="badge text-bg-success">
+
+                            Active
+
+                        </span>
+
+                    </div>
+
+                    <div class="info-list">
+
+                        <div>
+
+                            <span>Survey Code</span>
+
+                            <strong>DASS21</strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Category</span>
+
+                            <strong>Mental Health</strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Total Questions</span>
+
+                            <strong>21</strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Duration</span>
+
+                            <strong>10 Minutes</strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Responses</span>
+
+                            <strong>515</strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Created Date</span>
+
+                            <strong>01/01/2026</strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT -->
+
+            <div class="col-xl-8">
+
+                <!-- DESCRIPTION -->
+
+                <div class="panel mb-3">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2 class="h5 mb-1 section-title">
+
+                                <i class="bi bi-info-circle"></i>
+
+                                <span>
+                                    Survey Description
+                                </span>
+
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <p>
+
+                        The DASS-21 survey is a psychological
+                        screening tool used to assess three
+                        emotional states including Depression,
+                        Anxiety and Stress among university students.
+
+                    </p>
+
+                </div>
+
+                <!-- QUESTION LIST -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2 class="h5 mb-1 section-title">
+
+                                <i class="bi bi-list-check"></i>
+
+                                <span>
+                                    Question List
+                                </span>
+
+                            </h2>
+
+                            <p class="text-muted mb-0">
+
+                                Survey questions available in this survey.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="table-responsive">
+
+                        <table class="table align-middle">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>#</th>
+
+                                    <th>Question</th>
+
+                                    <th>Domain</th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+
+                                    <td>1</td>
+
+                                    <td>
+                                        I found it hard to wind down.
+                                    </td>
+
+                                    <td>
+                                        Stress
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>2</td>
+
+                                    <td>
+                                        I was aware of dryness of my mouth.
+                                    </td>
+
+                                    <td>
+                                        Anxiety
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>3</td>
+
+                                    <td>
+                                        I couldn't seem to experience any positive feeling at all.
+                                    </td>
+
+                                    <td>
+                                        Depression
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>4</td>
+
+                                    <td>
+                                        I experienced breathing difficulty.
+                                    </td>
+
+                                    <td>
+                                        Anxiety
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>5</td>
+
+                                    <td>
+                                        I found it difficult to work up the initiative to do things.
+                                    </td>
+
+                                    <td>
+                                        Depression
+                                    </td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td colspan="3"
+                                        class="text-center text-muted">
+
+                                        ...
+                                        Remaining 16 DASS-21 Questions
+                                        ...
+
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>

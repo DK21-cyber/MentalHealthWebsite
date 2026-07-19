@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "Surveys";
+}
+
+<div class="container py-5">
+
+    <h2 class="mb-4">
+        Danh sách khảo sát
+    </h2>
+
+    <div class="survey-list">
+
+        <div class="survey-item">
+
+            <div>
+
+                <h4>DASS-21</h4>
+
+                <p>
+                    Đánh giá Stress, Anxiety và Depression
+                </p>
+
+            </div>
+
+            <a asp-controller="Survey"
+               asp-action="Details"
+               asp-route-id="1"
+               class="btn btn-primary">
+
+                Xem chi tiết
+
+            </a>
+
+        </div>
+
+        <div class="survey-item">
+
+            <div>
+
+                <h4>PHQ-9</h4>
+
+                <p>
+                    Đánh giá mức độ trầm cảm
+                </p>
+
+            </div>
+
+            <a asp-controller="Survey"
+               asp-action="Details"
+               asp-route-id="2"
+               class="btn btn-primary">
+
+                Xem chi tiết
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,398 @@
+﻿@model PW.Models.ViewModels.SurveyResultViewModel
+
+@{
+    ViewData["Title"] = "Assessment Results";
+}
+
+<div class="container py-5">
+
+    <!-- ================================= -->
+    <!-- PAGE HEADER -->
+    <!-- ================================= -->
+
+    <div class="text-center mb-5">
+
+        <h2 class="fw-bold">
+
+            AI Mental Health Assessment Results
+
+        </h2>
+
+        <p class="text-muted">
+
+            The following results were generated using
+            psychological assessment data and Machine Learning
+            prediction models.
+
+        </p>
+
+    </div>
+
+    <!-- ================================= -->
+    <!-- RESULT TABLES -->
+    <!-- ================================= -->
+
+    <div class="row g-4">
+
+        <!-- STRESS -->
+
+        <div class="col-lg-4">
+
+            <div class="card shadow h-100">
+
+                <div class="card-header bg-danger text-white text-center">
+
+                    <h4 class="mb-0">
+
+                        Stress
+
+                    </h4>
+
+                </div>
+
+                <div class="card-body p-0">
+
+                    <table class="table table-bordered mb-0">
+
+                        <tbody>
+
+                            <tr>
+
+                                <th width="40%">
+                                    Prediction Model
+                                </th>
+
+                                <td>
+                                    Support Vector Machine (SVM)
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>
+
+                                    Result
+
+                                </th>
+
+                                <td class="fw-bold text-danger">
+
+                                    @Model.Stress
+
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>
+
+                                    Risk Level
+
+                                </th>
+
+                                <td>
+
+                                    Medium Risk
+
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>
+
+                                    Recommendation
+
+                                </th>
+
+                                <td>
+
+                                    Practice relaxation techniques,
+                                    maintain regular sleep,
+                                    and reduce academic stress.
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ANXIETY -->
+
+        <div class="col-lg-4">
+
+            <div class="card shadow h-100">
+
+                <div class="card-header bg-warning text-dark text-center">
+
+                    <h4 class="mb-0">
+
+                        Anxiety
+
+                    </h4>
+
+                </div>
+
+                <div class="card-body p-0">
+
+                    <table class="table table-bordered mb-0">
+
+                        <tbody>
+
+                            <tr>
+
+                                <th width="40%">
+
+                                    Prediction Model
+
+                                </th>
+
+                                <td>
+
+                                    K-Nearest Neighbors (KNN)
+
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>
+
+                                    Result
+
+                                </th>
+
+                                <td class="fw-bold text-warning">
+
+                                    @Model.Anxiety
+
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>
+
+                                    Risk Level
+
+                                </th>
+
+                                <td>
+
+                                    Low Risk
+
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>
+
+                                    Recommendation
+
+                                </th>
+
+                                <td>
+
+                                    Engage in physical activity,
+                                    mindfulness,
+                                    and maintain social connections.
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- DEPRESSION -->
+
+        <div class="col-lg-4">
+
+            <div class="card shadow h-100">
+
+                <div class="card-header bg-primary text-white text-center">
+
+                    <h4 class="mb-0">
+
+                        Depression
+
+                    </h4>
+
+                </div>
+
+                <div class="card-body p-0">
+
+                    <table class="table table-bordered mb-0">
+
+                        <tbody>
+
+                            <tr>
+
+                                <th width="40%">
+
+                                    Prediction Model
+
+                                </th>
+
+                                <td>
+
+                                    Logistic Regression
+
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>
+
+                                    Result
+
+                                </th>
+
+                                <td class="fw-bold text-primary">
+
+                                    @Model.Depression
+
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>
+
+                                    Risk Level
+
+                                </th>
+
+                                <td>
+
+                                    Low Risk
+
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <th>
+
+                                    Recommendation
+
+                                </th>
+
+                                <td>
+
+                                    Maintain a healthy lifestyle,
+                                    stay connected with family,
+                                    and seek help if symptoms persist.
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================================= -->
+    <!-- GENERAL RECOMMENDATION -->
+    <!-- ================================= -->
+
+    <div class="card shadow mt-5">
+
+        <div class="card-header">
+
+            <h4 class="mb-0">
+
+                General Recommendations
+
+            </h4>
+
+        </div>
+
+        <div class="card-body">
+
+            <ul class="mb-4">
+
+                <li>
+
+                    Maintain a healthy balance between study, work, and rest.
+
+                </li>
+
+                <li>
+
+                    Exercise regularly and participate in outdoor activities.
+
+                </li>
+
+                <li>
+
+                    Share your feelings with trusted friends or family members.
+
+                </li>
+
+                <li>
+
+                    Practice stress management techniques such as meditation or deep breathing.
+
+                </li>
+
+                <li>
+
+                    If symptoms continue or worsen,
+                    seek professional psychological support.
+
+                </li>
+
+            </ul>
+
+            <div class="text-end">
+
+                <a asp-controller="Appointment"
+                   asp-action="Book"
+                   class="btn btn-danger">
+
+                    Schedule an Appointment
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

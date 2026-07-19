@@ -1,0 +1,129 @@
+﻿@model IEnumerable<PW.Models.PsychologicalProfile>
+
+@using PW.Models
+
+@{
+    ViewData["Title"] = "Psychological Profile";
+}
+
+<div class="container py-4">
+
+    <div class="d-flex justify-content-between mb-4">
+
+        <h2>Psychological Profile</h2>
+
+        <a asp-action="Index"
+           class="btn btn-secondary">
+
+            Back
+
+        </a>
+
+    </div>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info">
+
+            No psychological profile available.
+
+        </div>
+    }
+    else
+    {
+        @foreach (var item in Model)
+        {
+            <div class="card shadow mb-4">
+
+                <div class="card-header bg-light">
+
+                    <div class="d-flex justify-content-between">
+
+                        <strong>
+
+                            @item.CreatedAt.ToString("dd/MM/yyyy")
+
+                        </strong>
+
+                        <span>
+
+                            @switch (item.Status)
+                            {
+                                case ProfileStatus.Normal:
+                                    <span class="badge bg-success">
+                                        Normal
+                                    </span>
+                                    break;
+
+                                case ProfileStatus.Monitoring:
+                                    <span class="badge bg-warning text-dark">
+                                        Monitoring
+                                    </span>
+                                    break;
+
+                                case ProfileStatus.Counseling:
+                                    <span class="badge bg-primary">
+                                        Counseling
+                                    </span>
+                                    break;
+
+                                case ProfileStatus.Risking:
+                                    <span class="badge bg-danger">
+                                        High Risk
+                                    </span>
+                                    break;
+                            }
+
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="card-body">
+
+                <div class="mb-3">
+
+                    <strong>Psychologist</strong>
+
+                    <br />
+
+                    @item.Psychologist?.Name
+
+                </div>
+
+                <div class="mb-3">
+
+                    <strong>Diagnosis</strong>
+
+                    <p>
+
+                        @(string.IsNullOrWhiteSpace(item.Diagnosis)
+                                            ? "No diagnosis available."
+                                            : item.Diagnosis)
+
+                    </p>
+
+                </div>
+
+                <div>
+
+                    <strong>Notes</strong>
+
+                    <p>
+
+                        @(string.IsNullOrWhiteSpace(item.Notes)
+                                            ? "No notes."
+                                            : item.Notes)
+
+                </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        }
+    }
+
+</div>

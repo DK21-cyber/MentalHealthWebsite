@@ -1,0 +1,101 @@
+﻿@model IEnumerable<PW.Models.ViewModels.AppointmentHistoryViewModel>
+
+@{
+    ViewData["Title"] = "Appointment History";
+}
+
+<div class="container py-4">
+
+    <h2 class="mb-4">
+
+        Appointment History
+
+    </h2>
+
+    <div class="card shadow">
+
+        <div class="card-body">
+
+            <table class="table table-hover">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Psychologist</th>
+
+                        <th>Specialty</th>
+
+                        <th>Date</th>
+
+                        <th>Time</th>
+
+                        <th>Status</th>
+
+                        <th></th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <td>@item.PsychologistName</td>
+
+                            <td>@item.Specialty</td>
+
+                            <td>@item.AppointmentDate.ToString("dd/MM/yyyy")</td>
+
+                            <td>@item.Time.ToString("HH:mm")</td>
+
+                            <td>
+
+                                @switch (item.Status)
+                                {
+                                    case AppointmentStatus.Pending:
+                                        <span class="badge bg-warning">Pending</span>
+                                        break;
+
+                                    case AppointmentStatus.Approved:
+                                        <span class="badge bg-primary">Approved</span>
+                                        break;
+
+                                    case AppointmentStatus.Completed:
+                                        <span class="badge bg-success">Completed</span>
+                                        break;
+
+                                    default:
+                                        <span class="badge bg-danger">Cancelled</span>
+                                        break;
+                                }
+
+                            </td>
+
+                            <td>
+
+                                <a asp-action="AppointmentDetail"
+                                   asp-route-id="@item.Id"
+                                   class="btn btn-sm btn-primary">
+
+                                    View
+
+                                </a>
+
+                            </td>
+
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>

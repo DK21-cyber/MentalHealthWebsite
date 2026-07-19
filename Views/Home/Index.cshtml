@@ -1,0 +1,1122 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<!-- =========================
+     HERO SECTION
+========================== -->
+
+<section class="hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <h1>
+                AI-Powered Student Mental Health
+                Support System
+            </h1>
+
+            <p>
+                An intelligent platform that combines
+                psychological assessments, Machine Learning,
+                appointment management, and personalized
+                mental health support for university students.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a asp-controller="Survey"
+                   asp-action="Index"
+                   class="btn-primary">
+
+                    Start Assessment
+
+                </a>
+
+                <a asp-controller="Account"
+                   asp-action="Login"
+                   class="btn-outline">
+
+                    Login
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     RESEARCH OVERVIEW
+========================== -->
+
+<section class="stats">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Research Overview</h2>
+
+            <p>
+                Key statistics and technologies behind the
+                intelligent mental health support system.
+            </p>
+
+        </div>
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <h2>515</h2>
+
+                <p>Survey Responses</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h2>11</h2>
+
+                <p>Machine Learning Models</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h2>3</h2>
+
+                <p>Mental Health Dimensions</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h2>24/7</h2>
+
+                <p>System Availability</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     QUICK ACCESS
+========================== -->
+
+<section class="quick-access">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Quick Access</h2>
+
+            <p>
+                Navigate quickly to the main features
+                of the system.
+            </p>
+
+        </div>
+
+        <div class="quick-grid">
+
+            <!-- Student Profile -->
+
+            <a asp-controller="Student"
+               asp-action="Profile"
+               class="quick-card">
+
+                <h3>My Profile</h3>
+
+                <p>
+
+                    View your personal information,
+                    psychological profile, and assessment history.
+
+                </p>
+
+            </a>
+
+            <!-- Survey -->
+
+            <a asp-controller="Survey"
+               asp-action="Index"
+               class="quick-card">
+
+                <h3>Assessments</h3>
+
+                <p>
+
+                    Complete psychological assessments
+                    and review previous submissions.
+
+                </p>
+
+            </a>
+
+            <!-- Appointment -->
+
+            <a asp-controller="Appointment"
+               asp-action="Book"
+               class="quick-card">
+
+                <h3>Book Appointment</h3>
+
+                <p>
+
+                    Schedule a consultation with
+                    a psychologist.
+
+                </p>
+
+            </a>
+
+            <!-- Schedule -->
+
+            <a asp-controller="Appointment"
+               asp-action="Schedule"
+               class="quick-card">
+
+                <h3>My Appointments</h3>
+
+                <p>
+
+                    View and manage
+                    your upcoming appointments.
+
+                </p>
+
+            </a>
+
+            <!-- Results -->
+
+            <a asp-controller="Survey"
+               asp-action="Result"
+               class="quick-card">
+
+                <h3>Assessment Results</h3>
+
+                <p>
+
+                    View AI-assisted assessment
+                    reports and recommendations.
+
+                </p>
+
+            </a>
+
+            <!-- Blog -->
+
+            <a asp-controller="Blog"
+               asp-action="Index"
+               class="quick-card">
+
+                <h3>Mental Health Articles</h3>
+
+                <p>
+
+                    Explore educational articles
+                    and mental wellness resources.
+
+                </p>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SYSTEM FEATURES
+========================== -->
+
+<section class="features">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>System Features</h2>
+
+            <p>
+                Discover the key features designed to support
+                students and psychologists throughout the
+                mental health assessment process.
+            </p>
+
+        </div>
+
+        <div class="feature-grid">
+
+            <!-- Survey -->
+
+            <a asp-controller="Survey"
+               asp-action="Index"
+               class="feature-card">
+
+                <h3>Online Assessments</h3>
+
+                <p>
+
+                    Complete psychological assessments
+                    anytime using professionally designed
+                    questionnaires.
+
+                </p>
+
+                <span class="feature-link">
+
+                    Learn More →
+
+                </span>
+
+            </a>
+
+            <!-- AI -->
+
+            <a asp-controller="Survey"
+               asp-action="Result"
+               class="feature-card">
+
+                <h3>AI Assessment</h3>
+
+                <p>
+
+                    Machine Learning analyzes assessment
+                    responses and provides intelligent
+                    mental health insights.
+
+                </p>
+
+                <span class="feature-link">
+
+                    View Results →
+
+                </span>
+
+            </a>
+
+            <!-- Profile -->
+
+            <a asp-controller="Student"
+               asp-action="Profile"
+               class="feature-card">
+
+                <h3>Psychological Profile</h3>
+
+                <p>
+
+                    Maintain a complete history of
+                    assessments, appointments,
+                    and psychological records.
+
+                </p>
+
+                <span class="feature-link">
+
+                    Open Profile →
+
+                </span>
+
+            </a>
+
+            <!-- Appointment -->
+
+            <a asp-controller="Appointment"
+               asp-action="Index"
+               class="feature-card">
+
+                <h3>Appointment Management</h3>
+
+                <p>
+
+                    Schedule counseling sessions,
+                    manage appointments,
+                    and receive consultation support.
+
+                </p>
+
+                <span class="feature-link">
+
+                    Book Now →
+
+                </span>
+
+            </a>
+
+            <!-- Blog -->
+
+            <a asp-controller="Blog"
+               asp-action="Index"
+               class="feature-card">
+
+                <h3>Mental Health Articles</h3>
+
+                <p>
+
+                    Read expert articles,
+                    self-care guides,
+                    and educational resources
+                    about mental wellness.
+
+                </p>
+
+                <span class="feature-link">
+
+                    Explore Articles →
+
+                </span>
+
+            </a>
+
+            <!-- Contact -->
+
+            <a asp-controller="Home"
+               asp-action="Contact"
+               class="feature-card">
+
+                <h3>Support & Contact</h3>
+
+                <p>
+
+                    Contact our research team
+                    or request additional
+                    information about the project.
+
+                </p>
+
+                <span class="feature-link">
+
+                    Contact Us →
+
+                </span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     ABOUT THE PLATFORM
+========================== -->
+
+<section class="about">
+
+    <div class="container">
+
+        <div class="about-wrapper">
+
+            <div class="about-content">
+
+                <h2>
+
+                    Supporting Student Mental Well-being
+                    with Artificial Intelligence
+
+                </h2>
+
+                <p>
+
+                    This platform integrates psychological
+                    assessments, Machine Learning,
+                    appointment scheduling,
+                    and psychological profile management
+                    into one unified system.
+
+                </p>
+
+                <p>
+
+                    Instead of focusing on a single assessment,
+                    the platform supports multiple survey types,
+                    allowing psychologists to create customized
+                    assessments based on different counseling
+                    objectives.
+
+                </p>
+
+                <p>
+
+                    AI-generated insights help identify
+                    potential mental health risks early,
+                    while psychologists retain full control
+                    over professional evaluation and treatment.
+
+                </p>
+
+                <a asp-controller="Home"
+                   asp-action="About"
+                   class="btn-primary mt-3">
+
+                    Learn More About the Project
+
+                </a>
+
+            </div>
+
+            <div class="about-image">
+
+                <img src="~/images/mental-health.jpg"
+                     alt="Mental Health Support">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     RESEARCH HIGHLIGHTS
+========================== -->
+
+<section class="research-highlights">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Research Highlights</h2>
+
+            <p>
+
+                Machine Learning models selected
+                for different mental health dimensions
+                during the research process.
+
+            </p>
+
+        </div>
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <h3>Depression</h3>
+
+                <p>
+
+                    <strong>Best Model</strong>
+
+                </p>
+
+                <h4>
+
+                    Logistic Regression
+
+                </h4>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h3>Anxiety</h3>
+
+                <p>
+
+                    <strong>Best Model</strong>
+
+                </p>
+
+                <h4>
+
+                    K-Nearest Neighbors (KNN)
+
+                </h4>
+
+            </div>
+
+            <div class="stat-card">
+
+                <h3>Stress</h3>
+
+                <p>
+
+                    <strong>Best Model</strong>
+
+                </p>
+
+                <h4>
+
+                    Support Vector Machine (SVM)
+
+                </h4>
+
+            </div>
+
+        </div>
+
+        <div class="text-center mt-5">
+
+            <a asp-controller="Home"
+               asp-action="About"
+               class="btn-outline">
+
+                View Research Details
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     CALL TO ACTION
+========================== -->
+
+<section class="cta-section">
+
+    <div class="container">
+
+        <div class="cta-box">
+
+            <h2>
+
+                Ready to Take Care of Your Mental Health?
+
+            </h2>
+
+            <p>
+
+                Complete an assessment,
+                explore mental health resources,
+                or schedule a consultation
+                with a psychologist today.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a asp-controller="Survey"
+                   asp-action="Index"
+                   class="btn-primary">
+
+                    Start Assessment
+
+                </a>
+
+                <a asp-controller="Appointment"
+                   asp-action="Book"
+                   class="btn-outline">
+
+                    Book Appointment
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+            <!-- =========================
+     AI WORKFLOW
+========================== -->
+
+<section class="process">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>How the AI Assessment Works</h2>
+
+            <p>
+
+                A streamlined workflow that combines
+                psychological assessments with
+                Machine Learning to provide
+                intelligent decision support.
+
+            </p>
+
+        </div>
+
+        <div class="timeline">
+
+            <div class="step">
+
+                <div class="step-circle">
+
+                    Survey
+
+                </div>
+
+                <h4>Assessment</h4>
+
+                <p>
+
+                    Students complete one or more
+                    psychological questionnaires.
+
+                </p>
+
+            </div>
+
+            <div class="step-line"></div>
+
+            <div class="step">
+
+                <div class="step-circle">
+
+                    Data
+
+                </div>
+
+                <h4>Data Processing</h4>
+
+                <p>
+
+                    Responses are securely stored
+                    and prepared for analysis.
+
+                </p>
+
+            </div>
+
+            <div class="step-line"></div>
+
+            <div class="step">
+
+                <div class="step-circle">
+
+                    AI
+
+                </div>
+
+                <h4>Prediction</h4>
+
+                <p>
+
+                    Machine Learning models analyze
+                    assessment responses.
+
+                </p>
+
+            </div>
+
+            <div class="step-line"></div>
+
+            <div class="step">
+
+                <div class="step-circle">
+
+                    Report
+
+                </div>
+
+                <h4>Assessment Report</h4>
+
+                <p>
+
+                    Personalized results and
+                    recommendations are generated.
+
+                </p>
+
+            </div>
+
+            <div class="step-line"></div>
+
+            <div class="step">
+
+                <div class="step-circle">
+
+                    Care
+
+                </div>
+
+                <h4>Professional Support</h4>
+
+                <p>
+
+                    Students can schedule
+                    appointments with psychologists.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     LATEST ARTICLES
+========================== -->
+
+<section class="latest-blog">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Latest Mental Health Articles</h2>
+
+            <p>
+
+                Stay informed with educational
+                resources and practical advice
+                from mental health professionals.
+
+            </p>
+
+        </div>
+
+        <div class="blog-grid">
+
+            <div class="blog-card">
+
+                <img src="~/images/blog1.jpg"
+                     alt="Managing Stress" />
+
+                <div class="blog-content">
+
+                    <span class="blog-category">
+
+                        Stress Management
+
+                    </span>
+
+                    <h3>
+
+                        Managing Academic Stress Effectively
+
+                    </h3>
+
+                    <p>
+
+                        Learn practical strategies
+                        for balancing coursework,
+                        exams, and personal well-being.
+
+                    </p>
+
+                    <a asp-controller="Blog"
+                       asp-action="Index">
+
+                        Read More →
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="blog-card">
+
+                <img src="~/images/blog2.jpg"
+                     alt="Anxiety" />
+
+                <div class="blog-content">
+
+                    <span class="blog-category">
+
+                        Anxiety
+
+                    </span>
+
+                    <h3>
+
+                        Understanding Anxiety in University Students
+
+                    </h3>
+
+                    <p>
+
+                        Explore common symptoms,
+                        causes, and healthy coping
+                        mechanisms.
+
+                    </p>
+
+                    <a asp-controller="Blog"
+                       asp-action="Index">
+
+                        Read More →
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="blog-card">
+
+                <img src="~/images/blog3.jpg"
+                     alt="Self Care" />
+
+                <div class="blog-content">
+
+                    <span class="blog-category">
+
+                        Self-Care
+
+                    </span>
+
+                    <h3>
+
+                        Building Healthy Daily Habits
+
+                    </h3>
+
+                    <p>
+
+                        Small lifestyle changes
+                        that can improve emotional
+                        resilience and well-being.
+
+                    </p>
+
+                    <a asp-controller="Blog"
+                       asp-action="Index">
+
+                        Read More →
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="text-center mt-5">
+
+            <a asp-controller="Blog"
+               asp-action="Index"
+               class="btn-primary">
+
+                View All Articles
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     WHY CHOOSE US
+========================== -->
+
+<section class="why-us">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Why Choose Our Platform?</h2>
+
+            <p>
+
+                Designed to support students,
+                psychologists, and researchers
+                with modern technologies.
+
+            </p>
+
+        </div>
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+
+                <h3>AI-Powered Analysis</h3>
+
+                <p>
+
+                    Intelligent prediction models
+                    assist early mental health
+                    risk identification.
+
+                </p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <h3>Multiple Assessment Types</h3>
+
+                <p>
+
+                    Support for different
+                    psychological surveys
+                    instead of a single questionnaire.
+
+                </p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <h3>Professional Counseling</h3>
+
+                <p>
+
+                    Connect students with
+                    psychologists for
+                    personalized consultations.
+
+                </p>
+
+            </div>
+
+            <div class="feature-card">
+
+                <h3>Secure Data Management</h3>
+
+                <p>
+
+                    Student records are managed
+                    securely with modern
+                    database technologies.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     PROFESSIONAL SUPPORT
+========================== -->
+
+<section class="support-section">
+
+    <div class="container">
+
+        <div class="support-box">
+
+            <h2>
+
+                Need Professional Support?
+
+            </h2>
+
+            <p>
+
+                If you are experiencing stress,
+                anxiety, depression,
+                or emotional difficulties,
+                professional support is available.
+
+            </p>
+
+            <p>
+
+                Our platform helps connect
+                students with qualified
+                psychologists for
+                confidential consultations.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a asp-controller="Appointment"
+                   asp-action="Book"
+                   class="btn-primary">
+
+                    Schedule an Appointment
+
+                </a>
+
+                <a asp-controller="Contact"
+                   asp-action="Index"
+                   class="btn-outline">
+
+                    Contact Us
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     FINAL CALL TO ACTION
+========================== -->
+
+<section class="final-cta">
+
+    <div class="container">
+
+        <div class="cta-box">
+
+            <h2>
+
+                Start Your Mental Wellness Journey Today
+
+            </h2>
+
+            <p>
+
+                Take the first step toward
+                understanding your mental well-being.
+                Complete an assessment,
+                explore educational resources,
+                or schedule a consultation
+                with a psychologist.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a asp-controller="Survey"
+                   asp-action="Index"
+                   class="btn-primary">
+
+                    Take an Assessment
+
+                </a>
+
+                <a asp-controller="Blog"
+                   asp-action="Index"
+                   class="btn-outline">
+
+                    Explore Articles
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

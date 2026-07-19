@@ -1,0 +1,146 @@
+﻿@model PW.Models.ViewModels.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="auth-container">
+
+    <div class="auth-left">
+
+        <div class="auth-overlay">
+
+            <h1>Mental Health AI</h1>
+
+            <p>
+                Join the platform to monitor your mental health,
+                complete psychological assessments, and receive
+                professional support.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="auth-right">
+
+        <div class="auth-card">
+
+            <h2>Create Account</h2>
+
+            <p class="auth-subtitle">
+                Register a new account
+            </p>
+
+            @if (TempData["Error"] != null)
+            {
+                <div class="alert alert-danger">
+
+                    @TempData["Error"]
+
+                </div>
+            }
+
+            <form asp-controller="Account"
+                  asp-action="Register"
+                  method="post">
+
+                @Html.AntiForgeryToken()
+
+                <div asp-validation-summary="ModelOnly"
+                     class="text-danger mb-3">
+                </div>
+
+                <div class="form-group mb-3">
+
+                    <label asp-for="FullName"></label>
+
+                    <input asp-for="FullName"
+                           class="form-control"
+                           placeholder="Enter your full name" />
+
+                    <span asp-validation-for="FullName"
+                          class="text-danger">
+                    </span>
+
+                </div>
+
+                <div class="form-group mb-3">
+
+                    <label asp-for="Email"></label>
+
+                    <input asp-for="Email"
+                           class="form-control"
+                           placeholder="Enter your email address"
+                           autocomplete="email" />
+
+                    <span asp-validation-for="Email"
+                          class="text-danger">
+                    </span>
+
+                </div>
+
+                <div class="form-group mb-3">
+
+                    <label asp-for="Password"></label>
+
+                    <input asp-for="Password"
+                           class="form-control"
+                           autocomplete="new-password"
+                           placeholder="Create a password" />
+
+                    <span asp-validation-for="Password"
+                          class="text-danger">
+                    </span>
+
+                </div>
+
+                <div class="form-group mb-4">
+
+                    <label asp-for="ConfirmPassword"></label>
+
+                    <input asp-for="ConfirmPassword"
+                           class="form-control"
+                           autocomplete="new-password"
+                           placeholder="Confirm your password" />
+
+                    <span asp-validation-for="ConfirmPassword"
+                          class="text-danger">
+                    </span>
+
+                </div>
+
+                <button type="submit"
+                        class="btn-auth w-100">
+
+                    Create Account
+
+                </button>
+
+            </form>
+
+            <div class="auth-footer mt-4">
+
+                Already have an account?
+
+                <a asp-controller="Account"
+                   asp-action="Login">
+
+                    Sign In
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+@section Scripts
+{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

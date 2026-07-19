@@ -1,0 +1,322 @@
+﻿@model IEnumerable<PW.Models.Blog>
+
+<main class="dashboard-content">
+
+    <div class="container-fluid px-3 px-lg-4 py-4">
+
+        <!-- Heading -->
+
+        <div class="page-heading">
+
+            <div class="page-heading-copy">
+
+                <span class="page-icon">
+                    <i class="bi bi-journal-richtext"></i>
+                </span>
+
+                <div>
+
+                    <p class="eyebrow mb-1">
+                        Content Management
+                    </p>
+
+                    <h1 class="h3 mb-1">
+                        Blog Articles
+                    </h1>
+
+                    <p class="text-muted mb-0">
+                        Create and manage mental health articles.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="heading-actions">
+
+                <a asp-action="Create"
+                   class="btn btn-primary btn-sm">
+
+                    <i class="bi bi-plus-circle"></i>
+
+                    New Article
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Statistics -->
+
+        <section class="row g-3 mt-1">
+
+            <div class="col-md-3">
+
+                <div class="metric-card metric-primary">
+
+                    <div class="metric-top">
+
+                        <span class="metric-label">
+                            Articles
+                        </span>
+
+                        <span class="metric-icon">
+                            <i class="bi bi-file-earmark-text"></i>
+                        </span>
+
+                    </div>
+
+                    <div class="metric-value">
+
+                        @Model.Count()
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="metric-card metric-success">
+
+                    <div class="metric-top">
+
+                        <span class="metric-label">
+
+                            Published
+
+                        </span>
+
+                        <span class="metric-icon">
+
+                            <i class="bi bi-check-circle"></i>
+
+                        </span>
+
+                    </div>
+
+                    <div class="metric-value">
+
+                        @Model.Count(x => x.IsPublished)
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="metric-card metric-warning">
+
+                    <div class="metric-top">
+
+                        <span class="metric-label">
+
+                            Draft
+
+                        </span>
+
+                        <span class="metric-icon">
+
+                            <i class="bi bi-pencil-square"></i>
+
+                        </span>
+
+                    </div>
+
+                    <div class="metric-value">
+
+                        @Model.Count(x => !x.IsPublished)
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="metric-card metric-danger">
+
+                    <div class="metric-top">
+
+                        <span class="metric-label">
+
+                            Views
+
+                        </span>
+
+                        <span class="metric-icon">
+
+                            <i class="bi bi-eye"></i>
+
+                        </span>
+
+                    </div>
+
+                    <div class="metric-value">
+
+                        @Model.Sum(x => x.ViewCount)
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- List -->
+
+        <section class="panel mt-4">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <h2 class="section-title">
+
+                        <i class="bi bi-card-list"></i>
+
+                        Articles
+
+                    </h2>
+
+                </div>
+
+                <input class="form-control form-control-sm table-search"
+                       type="search"
+                       placeholder="Search article">
+
+            </div>
+
+            <div class="row">
+
+                @foreach (var item in Model)
+                {
+
+                    <div class="col-lg-6 mb-4">
+
+                        <div class="card shadow-sm border-0 h-100">
+
+                            <img src="@item.Thumbnail"
+                                 class="card-img-top"
+                                 style="height:220px;object-fit:cover;" />
+
+                            <div class="card-body">
+
+                                <span class="badge bg-primary">
+
+                                    @item.Category?.Name
+
+                                </span>
+
+                                <h5 class="mt-3">
+
+                                    @item.Title
+
+                                </h5>
+
+                                <p class="text-muted">
+
+                                    @item.Summary
+
+                                </p>
+
+                                <div class="small text-secondary">
+
+                                    <i class="bi bi-person"></i>
+
+                                    @item.Author?.FullName
+
+                                    |
+
+                                    <i class="bi bi-calendar"></i>
+
+                                    @item.CreatedAt.ToString("dd/MM/yyyy")
+
+                                </div>
+
+                                <div class="mt-2">
+
+                                    <i class="bi bi-eye"></i>
+
+                                    @item.ViewCount views
+
+                                </div>
+
+                            </div>
+
+                            <div class="card-footer bg-white">
+
+                                <div class="d-flex justify-content-between">
+
+                                    <span>
+
+                                        @if (item.IsPublished)
+                                        {
+                                            <span class="badge bg-success">
+
+                                                Published
+
+                                            </span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-warning">
+
+                                                Draft
+
+                                            </span>
+                                        }
+
+                                    </span>
+
+                                    <div>
+
+                                        <a asp-action="Details"
+                                           asp-route-id="@item.Id"
+                                           class="btn btn-sm btn-info">
+
+                                            <i class="bi bi-eye"></i>
+
+                                        </a>
+
+                                        <a asp-action="Edit"
+                                           asp-route-id="@item.Id"
+                                           class="btn btn-sm btn-warning">
+
+                                            <i class="bi bi-pencil"></i>
+
+                                        </a>
+
+                                        <a asp-action="Delete"
+                                           asp-route-id="@item.Id"
+                                           class="btn btn-sm btn-danger">
+
+                                            <i class="bi bi-trash"></i>
+
+                                        </a>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                }
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>

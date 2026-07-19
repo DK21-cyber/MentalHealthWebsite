@@ -1,0 +1,122 @@
+﻿@model PW.Models.ViewModels.SurveyDetailViewModel
+
+@{
+    ViewData["Title"] = "Survey Details";
+}
+
+<div class="container py-4">
+
+    <div class="card shadow">
+
+        <div class="card-header">
+
+            <h3>
+
+                Survey Details
+
+            </h3>
+
+        </div>
+
+        <div class="card-body">
+
+            <table class="table table-bordered">
+
+                <tr>
+
+                    <th width="220">
+
+                        Survey
+
+                    </th>
+
+                    <td>
+
+                        @Model.SurveyName
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <th>
+
+                        Submitted Date
+
+                    </th>
+
+                    <td>
+
+                        @Model.SubmittedAt.ToString("dd/MM/yyyy HH:mm")
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <th>
+
+                        Total Score
+
+                    </th>
+
+                    <td>
+
+                        @Model.TotalScore
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <th>
+
+                        Risk Level
+
+                    </th>
+
+                    <td>
+
+                        @Model.RiskLevel
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <th>
+
+                        AI Assessment
+
+                    </th>
+
+                    <td>
+
+                        @Model.ResultSummary
+
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+        <div class="card-footer text-end">
+
+            <a asp-action="SurveyHistory"
+               class="btn btn-secondary">
+
+                Back
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>

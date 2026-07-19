@@ -1,0 +1,445 @@
+﻿@{
+    Layout = "_LayoutAdmin";
+    ViewData["Title"] = "Result Details";
+}
+
+<main class="dashboard-content">
+
+    <div class="container-fluid px-3 px-lg-4 py-4">
+
+        <!-- PAGE HEADER -->
+
+        <div class="page-heading">
+
+            <div class="page-heading-copy">
+
+                <span class="page-icon">
+                    <i class="bi bi-bar-chart-line-fill"></i>
+                </span>
+
+                <div>
+
+                    <p class="eyebrow mb-1">
+                        Mental Health Analysis
+                    </p>
+
+                    <h1 class="h3 mb-1">
+                        Assessment Result
+                    </h1>
+
+                    <p class="text-muted mb-0">
+                        Detailed DASS-21 assessment and AI prediction.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="heading-actions">
+
+                <a asp-action="Index"
+                   class="btn btn-outline-secondary btn-sm">
+
+                    <i class="bi bi-arrow-left"></i>
+
+                    Back to Results
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <section class="row g-3">
+
+            <!-- STUDENT PROFILE -->
+
+            <div class="col-12 col-xl-4">
+
+                <div class="panel h-100 text-center profile-card">
+
+                    <div class="profile-cover">
+
+                        <img src="~/images/hero.png"
+                             alt="Student">
+
+                    </div>
+
+                    <div class="profile-hero">
+
+                        <img class="avatar-img avatar-xl profile-photo"
+                             src="https://ui-avatars.com/api/?name=Nguyen+Van+A&background=random">
+
+                        <h2 class="h5 mb-1">
+
+                            Nguyễn Văn A
+
+                        </h2>
+
+                        <p class="text-muted mb-3">
+
+                            Student ID: 202300001
+
+                        </p>
+
+                        <span class="badge text-bg-danger">
+
+                            High Risk
+
+                        </span>
+
+                    </div>
+
+                    <div class="info-list mt-4 text-start">
+
+                        <div>
+
+                            <span>Email</span>
+
+                            <strong>
+                                student@uef.edu.vn
+                            </strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Faculty</span>
+
+                            <strong>
+                                Information Technology
+                            </strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Phone</span>
+
+                            <strong>
+                                0901234567
+                            </strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Assessment Date</span>
+
+                            <strong>
+                                10/06/2026
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RESULT CONTENT -->
+
+            <div class="col-12 col-xl-8">
+
+                <!-- DASS SCORES -->
+
+                <div class="panel mb-3">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2 class="h5 mb-1 section-title">
+
+                                <i class="bi bi-clipboard-data"></i>
+
+                                <span>
+                                    DASS-21 Scores
+                                </span>
+
+                            </h2>
+
+                            <p class="text-muted mb-0">
+
+                                Raw assessment scores.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row g-3">
+
+                        <div class="col-md-4">
+
+                            <div class="mini-card">
+
+                                <span>
+                                    Stress
+                                </span>
+
+                                <strong>
+                                    32
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <div class="mini-card">
+
+                                <span>
+                                    Anxiety
+                                </span>
+
+                                <strong>
+                                    24
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <div class="mini-card">
+
+                                <span>
+                                    Depression
+                                </span>
+
+                                <strong>
+                                    18
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- AI RESULT -->
+
+                <div class="panel mb-3">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2 class="h5 mb-1 section-title">
+
+                                <i class="bi bi-cpu"></i>
+
+                                <span>
+                                    AI Prediction
+                                </span>
+
+                            </h2>
+
+                            <p class="text-muted mb-0">
+
+                                Classification generated by machine learning models.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row g-3">
+
+                        <div class="col-md-4">
+
+                            <div class="mini-card">
+
+                                <span>
+                                    Stress Model
+                                </span>
+
+                                <strong>
+                                    SVM
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <div class="mini-card">
+
+                                <span>
+                                    Anxiety Model
+                                </span>
+
+                                <strong>
+                                    KNN
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <div class="mini-card">
+
+                                <span>
+                                    Depression Model
+                                </span>
+
+                                <strong>
+                                    Logistic Regression
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- CLASSIFICATION -->
+
+                <div class="panel mb-3">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2 class="h5 mb-1 section-title">
+
+                                <i class="bi bi-activity"></i>
+
+                                <span>
+                                    Classification Result
+                                </span>
+
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <div class="activity-list">
+
+                        <div class="activity-item">
+
+                            <span class="activity-dot bg-danger"></span>
+
+                            <div>
+
+                                <p class="mb-1 fw-semibold">
+
+                                    Stress: Very Severe
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="activity-item">
+
+                            <span class="activity-dot bg-warning"></span>
+
+                            <div>
+
+                                <p class="mb-1 fw-semibold">
+
+                                    Anxiety: Severe
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="activity-item">
+
+                            <span class="activity-dot bg-primary"></span>
+
+                            <div>
+
+                                <p class="mb-1 fw-semibold">
+
+                                    Depression: Moderate
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- RECOMMENDATION -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2 class="h5 mb-1 section-title">
+
+                                <i class="bi bi-chat-heart"></i>
+
+                                <span>
+                                    Recommendation
+                                </span>
+
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <div class="alert alert-warning mb-0">
+
+                        The student shows a high level of psychological risk,
+                        especially in the Stress category.
+                        It is recommended to schedule a counseling session
+                        with a psychologist as soon as possible.
+
+                    </div>
+
+                </div>
+
+                <div class="mt-4 d-flex gap-2">
+
+                    <a asp-controller="Appointment"
+                       asp-action="Create"
+                       class="btn btn-primary">
+
+                        <i class="bi bi-calendar-plus"></i>
+
+                        Schedule Counseling
+
+                    </a>
+
+                    <a asp-action="Index"
+                       class="btn btn-outline-secondary">
+
+                        Back
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>

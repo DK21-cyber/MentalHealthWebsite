@@ -1,0 +1,386 @@
+﻿@{
+    Layout = "_LayoutAdmin";
+    ViewData["Title"] = "User Details";
+}
+
+<main class="dashboard-content">
+
+    ```
+    <div class="container-fluid px-3 px-lg-4 py-4">
+
+        <!-- PAGE HEADER -->
+
+        <div class="page-heading">
+
+            <div class="page-heading-copy">
+
+                <span class="page-icon">
+                    <i class="bi bi-person-lines-fill"></i>
+                </span>
+
+                <div>
+
+                    <p class="eyebrow mb-1">
+                        Administration
+                    </p>
+
+                    <h1 class="h3 mb-1">
+                        User Details
+                    </h1>
+
+                    <p class="text-muted mb-0">
+                        Xem thông tin tài khoản và lịch sử hoạt động.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="heading-actions">
+
+                <a asp-action="Index"
+                   class="btn btn-outline-secondary btn-sm">
+
+                    <i class="bi bi-arrow-left"></i>
+
+                    Back
+
+                </a>
+
+                <a asp-action="Edit"
+                   asp-route-id="1"
+                   class="btn btn-primary btn-sm">
+
+                    <i class="bi bi-pencil-square"></i>
+
+                    Edit User
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <section class="row g-3">
+
+            <!-- PROFILE -->
+
+            <div class="col-12 col-xl-4">
+
+                <div class="panel h-100 text-center profile-card">
+
+                    <div class="profile-cover">
+
+                        <img src="~/images/user-cover.jpg"
+                             alt="User Cover">
+
+                    </div>
+
+                    <div class="profile-hero">
+
+                        <img class="avatar-img avatar-xl profile-photo"
+                             src="~/images/avatar.png"
+                             alt="User Avatar">
+
+                        <h2 class="h5 mb-1">
+                            Nguyễn Văn A
+                        </h2>
+
+                        <p class="text-muted mb-3">
+                            Student Account
+                        </p>
+
+                        <span class="badge text-bg-success">
+
+                            Active
+
+                        </span>
+
+                    </div>
+
+                    <div class="info-list mt-4 text-start">
+
+                        <div>
+                            <span>Username</span>
+                            <strong>student001</strong>
+                        </div>
+
+                        <div>
+                            <span>Email</span>
+                            <strong>student001@uef.edu.vn</strong>
+                        </div>
+
+                        <div>
+                            <span>Phone</span>
+                            <strong>0901234567</strong>
+                        </div>
+
+                        <div>
+                            <span>Created</span>
+                            <strong>01/01/2026</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT CONTENT -->
+
+            <div class="col-12 col-xl-8">
+
+                <!-- ACCOUNT OVERVIEW -->
+
+                <div class="panel mb-3">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2 class="h5 mb-1 section-title">
+
+                                <i class="bi bi-person-vcard"></i>
+
+                                <span>
+                                    Account Overview
+                                </span>
+
+                            </h2>
+
+                            <p class="text-muted mb-0">
+
+                                Thông tin tài khoản hiện tại.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row g-3">
+
+                        <div class="col-md-3">
+
+                            <div class="mini-card">
+
+                                <span>Role</span>
+
+                                <strong>
+                                    Student
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-3">
+
+                            <div class="mini-card">
+
+                                <span>Status</span>
+
+                                <strong>
+                                    Active
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-3">
+
+                            <div class="mini-card">
+
+                                <span>Last Login</span>
+
+                                <strong>
+                                    Today
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-3">
+
+                            <div class="mini-card">
+
+                                <span>Surveys</span>
+
+                                <strong>
+                                    12
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- LINKED PROFILE -->
+
+                <div class="panel mb-3">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2 class="h5 mb-1 section-title">
+
+                                <i class="bi bi-link-45deg"></i>
+
+                                <span>
+                                    Linked Profile
+                                </span>
+
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row g-3">
+
+                        <div class="col-md-6">
+
+                            <div class="mini-card">
+
+                                <span>Student ID</span>
+
+                                <strong>
+                                    202300001
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="mini-card">
+
+                                <span>Major</span>
+
+                                <strong>
+                                    Information Technology
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- ACTIVITY -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2 class="h5 mb-1 section-title">
+
+                                <i class="bi bi-clock-history"></i>
+
+                                <span>
+                                    Recent Activities
+                                </span>
+
+                            </h2>
+
+                            <p class="text-muted mb-0">
+
+                                Hoạt động gần đây của tài khoản.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="activity-list">
+
+                        <div class="activity-item">
+
+                            <span class="activity-dot bg-success"></span>
+
+                            <div>
+
+                                <p class="mb-1 fw-semibold">
+
+                                    Hoàn thành khảo sát DASS-21
+
+                                </p>
+
+                                <p class="text-muted small mb-0">
+
+                                    2 giờ trước
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="activity-item">
+
+                            <span class="activity-dot bg-primary"></span>
+
+                            <div>
+
+                                <p class="mb-1 fw-semibold">
+
+                                    Đăng nhập hệ thống
+
+                                </p>
+
+                                <p class="text-muted small mb-0">
+
+                                    Hôm nay
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="activity-item">
+
+                            <span class="activity-dot bg-warning"></span>
+
+                            <div>
+
+                                <p class="mb-1 fw-semibold">
+
+                                    Cập nhật hồ sơ cá nhân
+
+                                </p>
+
+                                <p class="text-muted small mb-0">
+
+                                    3 ngày trước
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+    ```
+
+</main>

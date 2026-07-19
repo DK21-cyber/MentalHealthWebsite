@@ -1,0 +1,118 @@
+﻿@await RenderSectionAsync("Scripts", required: false)
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"] - Mental Health AI</title>
+
+    <link rel="stylesheet" href= "~/css/site.css" asp-append-version="true" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</head>
+<body>
+
+    <header>
+
+        <div class="container navbar">
+
+            <div class="logo">
+
+                <img src="~/images/logo.png" alt="Logo">
+
+                <span>Mental Health AI</span>
+
+            </div>
+
+            <nav>
+
+                <ul>
+
+                    <li>
+                        <a asp-controller="Home"
+                           asp-action="Index">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a asp-controller="Home"
+                           asp-action="About">
+                            About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a asp-controller="Home"
+                           asp-action="Contact">
+                            Contact
+                        </a>
+                    </li>
+
+                    <li>
+                        <a asp-controller="Psychologist"
+                           asp-action="Dashboard">
+                            Psychologist
+                        </a>
+                    </li>
+
+                    <li>
+                        <a asp-controller="Blog"
+                           asp-action="Index">
+                            Blog
+                        </a>
+                    </li>
+
+                    <li>
+                        <a asp-controller="Survey"
+                           asp-action="TakeSurvey">
+                            Survey
+                        </a>
+                    </li>
+
+                    <li>
+                        <a asp-controller="Appointment"
+                           asp-action="Book">
+                            Appointment
+                        </a>
+                    </li>
+
+                    <li>
+                        <a asp-controller="Account"
+                           asp-action="Login"
+                           class="btn-login">
+                            Login
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer>
+
+        <div class="container">
+
+            <p>
+                © 2026 Mental Health AI System
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>

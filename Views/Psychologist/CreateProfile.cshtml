@@ -1,0 +1,114 @@
+﻿@model PW.Models.ViewModels.CreatePsychologicalProfileViewModel
+
+@{
+    ViewData["Title"] = "Create Psychological Profile";
+}
+
+<div class="container py-5">
+
+    <div class="card shadow">
+
+        <div class="card-header">
+
+            <h3>
+
+                Create Psychological Profile
+
+            </h3>
+
+        </div>
+
+        <div class="card-body">
+
+            <form asp-action="CreateProfile"
+                  method="post">
+
+                <div asp-validation-summary="ModelOnly"
+                     class="text-danger mb-3">
+                </div>
+
+                <div class="mb-3">
+
+                    <label asp-for="StudentId"
+                           class="form-label">
+                    </label>
+
+                    <select asp-for="StudentId"
+                            asp-items="Model.Students"
+                            class="form-select">
+
+                        <option value="">
+                            -- Select Student --
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label asp-for="Status"
+                           class="form-label">
+                    </label>
+
+                    <select asp-for="Status"
+                            asp-items="Html.GetEnumSelectList<ProfileStatus>()"
+                            class="form-select">
+                    </select>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label asp-for="Diagnosis"
+                           class="form-label">
+                    </label>
+
+                    <textarea asp-for="Diagnosis"
+                              rows="4"
+                              class="form-control">
+                    </textarea>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label asp-for="Notes"
+                           class="form-label">
+                    </label>
+
+                    <textarea asp-for="Notes"
+                              rows="6"
+                              class="form-control">
+                    </textarea>
+
+                </div>
+
+                <button class="btn btn-primary">
+
+                    <i class="bi bi-check-circle"></i>
+
+                    Save Profile
+
+                </button>
+
+                <a asp-action="Dashboard"
+                   class="btn btn-secondary">
+
+                    Cancel
+
+                </a>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+@section Scripts {
+
+    <partial name="_ValidationScriptsPartial" />
+
+}

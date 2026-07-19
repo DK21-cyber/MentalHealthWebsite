@@ -1,0 +1,96 @@
+﻿@model IEnumerable<PW.Models.SurveyResult>
+
+@{
+    ViewData["Title"] = "Survey History";
+}
+
+<div class="container py-4">
+
+    <div class="d-flex justify-content-between mb-4">
+
+        <h2>Survey History</h2>
+
+        <a asp-action="Index"
+           class="btn btn-secondary">
+
+            Back
+
+        </a>
+
+    </div>
+
+    <div class="card shadow">
+
+        <div class="card-body">
+
+            @if (!Model.Any())
+            {
+                <div class="alert alert-info">
+
+                    No survey history found.
+
+                </div>
+            }
+            else
+            {
+                <table class="table table-hover align-middle">
+
+                    <thead class="table-light">
+
+                        <tr>
+
+                            <th>ID</th>
+
+                            <th>Survey</th>
+
+                            <th>Total Score</th>
+
+                            <th>Risk Level</th>
+
+                            <th>Submitted</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+
+                                <td>@item.Id</td>
+
+                                <td>@item.Survey?.Title</td>
+
+                                <td>@item.TotalScore</td>
+
+                                <td>
+
+                                    <span class="badge bg-warning">
+
+                                        @item.RiskLevel
+
+                                    </span>
+
+                                </td>
+
+                                <td>
+
+                                    @item.SubmittedAt.ToString("dd/MM/yyyy HH:mm")
+
+                                </td>
+
+                            </tr>
+                        }
+
+                    </tbody>
+
+                </table>
+            }
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,347 @@
+﻿@{
+    Layout = "_LayoutAdmin";
+    ViewData["Title"] = "Student Details";
+}
+
+<div class="container-fluid px-3 px-lg-4 py-4">
+
+    <!-- Heading -->
+
+    <div class="page-heading">
+
+        <div class="page-heading-copy">
+
+            <span class="page-icon">
+
+                <i class="bi bi-person-vcard-fill"></i>
+
+            </span>
+
+            <div>
+
+                <p class="eyebrow mb-1">
+                    Student Management
+                </p>
+
+                <h1 class="h3 mb-1">
+                    Student Details
+                </h1>
+
+                <p class="text-muted mb-0">
+
+                    View profile information and mental health screening results.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="heading-actions">
+
+            <a asp-area="Admin"
+               asp-controller="Student"
+               asp-action="Index"
+               class="btn btn-outline-secondary btn-sm">
+
+                <i class="bi bi-arrow-left"></i>
+
+                Back
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <section class="row g-3">
+
+        <!-- Student Profile -->
+
+        <div class="col-12 col-xl-4">
+
+            <div class="panel h-100 text-center profile-card">
+
+                <div class="profile-cover">
+
+                    <img src="~/images/hero.png"
+                         alt="Mental Health">
+
+                </div>
+
+                <div class="profile-hero">
+
+                    <img class="avatar-img avatar-xl profile-photo"
+                         src="https://ui-avatars.com/api/?name=Nguyen+Van+A&background=005baa&color=fff">
+
+                    <h2 class="h5 mb-1">
+
+                        Nguyễn Văn A
+
+                    </h2>
+
+                    <p class="text-muted mb-3">
+
+                        Student ID: 202300001
+
+                    </p>
+
+                    <span class="badge text-bg-danger">
+
+                        High Risk
+
+                    </span>
+
+                </div>
+
+                <div class="info-list mt-4 text-start">
+
+                    <div>
+
+                        <span>Email</span>
+
+                        <strong>
+                            student@uef.edu.vn
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>Phone</span>
+
+                        <strong>
+                            0901234567
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>Faculty</span>
+
+                        <strong>
+                            Information Technology
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>Gender</span>
+
+                        <strong>
+                            Male
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Mental Health Overview -->
+
+        <div class="col-12 col-xl-8">
+
+            <div class="panel mb-3">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h2 class="h5 mb-1 section-title">
+
+                            <i class="bi bi-heart-pulse-fill"></i>
+
+                            <span>
+                                Latest DASS-21 Result
+                            </span>
+
+                        </h2>
+
+                        <p class="text-muted mb-0">
+
+                            Most recent psychological screening outcome.
+
+                        </p>
+
+                    </div>
+
+                    <a asp-controller="Survey"
+                       asp-action="Result"
+                       class="btn btn-primary btn-sm">
+
+                        View Full Result
+
+                    </a>
+
+                </div>
+
+                <div class="row g-3">
+
+                    <div class="col-md-4">
+
+                        <div class="mini-card">
+
+                            <span>
+                                Stress
+                            </span>
+
+                            <strong class="text-danger">
+
+                                Very Severe
+
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="mini-card">
+
+                            <span>
+                                Anxiety
+                            </span>
+
+                            <strong class="text-warning">
+
+                                Severe
+
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+
+                        <div class="mini-card">
+
+                            <span>
+                                Depression
+                            </span>
+
+                            <strong class="text-primary">
+
+                                Moderate
+
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Activity -->
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <h2 class="h5 mb-1 section-title">
+
+                            <i class="bi bi-clock-history"></i>
+
+                            <span>
+                                Survey History
+                            </span>
+
+                        </h2>
+
+                        <p class="text-muted mb-0">
+
+                            Recent psychological assessment activities.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="activity-list">
+
+                    <div class="activity-item">
+
+                        <span class="activity-dot bg-danger"></span>
+
+                        <div>
+
+                            <p class="mb-1 fw-semibold">
+
+                                DASS-21 Survey Completed
+
+                            </p>
+
+                            <p class="text-muted small mb-0">
+
+                                Very Severe Stress detected - 15/06/2026
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="activity-item">
+
+                        <span class="activity-dot bg-warning"></span>
+
+                        <div>
+
+                            <p class="mb-1 fw-semibold">
+
+                                Appointment Scheduled
+
+                            </p>
+
+                            <p class="text-muted small mb-0">
+
+                                Consultation with psychologist
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="activity-item">
+
+                        <span class="activity-dot bg-success"></span>
+
+                        <div>
+
+                            <p class="mb-1 fw-semibold">
+
+                                Student Profile Created
+
+                            </p>
+
+                            <p class="text-muted small mb-0">
+
+                                Initial registration completed
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>

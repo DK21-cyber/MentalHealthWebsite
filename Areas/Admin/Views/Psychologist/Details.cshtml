@@ -1,0 +1,318 @@
+﻿@{
+    Layout = "_LayoutAdmin";
+    ViewData["Title"] = "Psychologist Details";
+}
+
+<main class="dashboard-content">
+
+    <div class="container-fluid px-3 px-lg-4 py-4">
+
+        <!-- PAGE HEADER -->
+
+        <div class="page-heading">
+
+            <div class="page-heading-copy">
+
+                <span class="page-icon">
+                    <i class="bi bi-person-badge-fill"></i>
+                </span>
+
+                <div>
+
+                    <p class="eyebrow mb-1">
+                        Management
+                    </p>
+
+                    <h1 class="h3 mb-1">
+                        Psychologist Details
+                    </h1>
+
+                    <p class="text-muted mb-0">
+                        Xem thông tin chuyên viên tâm lý, lịch tư vấn và hoạt động gần đây.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="heading-actions">
+
+                <a asp-action="Index"
+                   class="btn btn-outline-secondary btn-sm">
+
+                    <i class="bi bi-arrow-left"></i>
+                    Back
+
+                </a>
+
+                <a asp-action="Edit"
+                   asp-route-id="1"
+                   class="btn btn-primary btn-sm">
+
+                    <i class="bi bi-pencil-square"></i>
+                    Edit
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- PROFILE -->
+
+        <section class="row g-3">
+
+            <div class="col-12 col-xl-4">
+
+                <div class="panel h-100 text-center profile-card">
+
+                    <div class="profile-cover">
+
+                        <img src="~/images/psychologist-cover.jpg"
+                             alt="Psychologist Cover">
+
+                    </div>
+
+                    <div class="profile-hero">
+
+                        <img class="avatar-img avatar-xl profile-photo"
+                             src="~/images/doctor-avatar.png"
+                             alt="Psychologist">
+
+                        <h2 class="h5 mb-1">
+                            ThS. Nguyễn Minh Anh
+                        </h2>
+
+                        <p class="text-muted mb-3">
+                            Chuyên viên Tâm lý học đường
+                        </p>
+
+                        <span class="badge text-bg-success">
+                            Active
+                        </span>
+
+                    </div>
+
+                    <div class="info-list mt-4 text-start">
+
+                        <div>
+                            <span>Email</span>
+                            <strong>anh.nguyen@uef.edu.vn</strong>
+                        </div>
+
+                        <div>
+                            <span>Phone</span>
+                            <strong>0901234567</strong>
+                        </div>
+
+                        <div>
+                            <span>Department</span>
+                            <strong>Student Counseling Center</strong>
+                        </div>
+
+                        <div>
+                            <span>Office</span>
+                            <strong>Building A - Room 203</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT -->
+
+            <div class="col-12 col-xl-8">
+
+                <!-- OVERVIEW -->
+
+                <div class="panel mb-3">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2 class="h5 mb-1 section-title">
+
+                                <i class="bi bi-person-vcard"></i>
+
+                                <span>
+                                    Professional Overview
+                                </span>
+
+                            </h2>
+
+                            <p class="text-muted mb-0">
+                                Thông tin chuyên môn và hiệu suất tư vấn.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row g-3">
+
+                        <div class="col-md-4">
+
+                            <div class="mini-card">
+
+                                <span>
+                                    Experience
+                                </span>
+
+                                <strong>
+                                    8 Years
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <div class="mini-card">
+
+                                <span>
+                                    Consultations
+                                </span>
+
+                                <strong>
+                                    420+
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <div class="mini-card">
+
+                                <span>
+                                    Students Managed
+                                </span>
+
+                                <strong>
+                                    186
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- RECENT ACTIVITIES -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2 class="h5 mb-1 section-title">
+
+                                <i class="bi bi-clock-history"></i>
+
+                                <span>
+                                    Recent Activities
+                                </span>
+
+                            </h2>
+
+                            <p class="text-muted mb-0">
+                                Hoạt động gần đây của chuyên viên.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="activity-list">
+
+                        <div class="activity-item">
+
+                            <span class="activity-dot bg-primary"></span>
+
+                            <div>
+
+                                <p class="mb-1 fw-semibold">
+                                    Hoàn thành buổi tư vấn với sinh viên CNTT
+                                </p>
+
+                                <p class="text-muted small mb-0">
+                                    1 giờ trước
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="activity-item">
+
+                            <span class="activity-dot bg-success"></span>
+
+                            <div>
+
+                                <p class="mb-1 fw-semibold">
+                                    Xác nhận lịch hẹn mới
+                                </p>
+
+                                <p class="text-muted small mb-0">
+                                    Hôm nay
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="activity-item">
+
+                            <span class="activity-dot bg-warning"></span>
+
+                            <div>
+
+                                <p class="mb-1 fw-semibold">
+                                    Cập nhật hồ sơ tâm lý sinh viên
+                                </p>
+
+                                <p class="text-muted small mb-0">
+                                    Hôm qua
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="activity-item">
+
+                            <span class="activity-dot bg-danger"></span>
+
+                            <div>
+
+                                <p class="mb-1 fw-semibold">
+                                    Gửi cảnh báo nguy cơ cao cho Admin
+                                </p>
+
+                                <p class="text-muted small mb-0">
+                                    2 ngày trước
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>

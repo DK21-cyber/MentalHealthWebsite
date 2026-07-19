@@ -1,0 +1,336 @@
+﻿@{
+    Layout = "_LayoutAdmin";
+    ViewData["Title"] = "Create Appointment";
+}
+
+<main class="dashboard-content">
+
+    <div class="container-fluid px-3 px-lg-4 py-4">
+
+        <!-- PAGE HEADER -->
+
+        <div class="page-heading">
+
+            <div class="page-heading-copy">
+
+                <span class="page-icon">
+                    <i class="bi bi-calendar-plus"></i>
+                </span>
+
+                <div>
+
+                    <p class="eyebrow mb-1">
+                        Appointment Management
+                    </p>
+
+                    <h1 class="h3 mb-1">
+                        Create Counseling Schedule
+                    </h1>
+
+                    <p class="text-muted mb-0">
+                        Create available consultation slots for students.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="heading-actions">
+
+                <a asp-action="Index"
+                   class="btn btn-outline-secondary btn-sm">
+
+                    <i class="bi bi-arrow-left"></i>
+
+                    Back to Schedule
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- FORM -->
+
+        <section class="row g-3">
+
+            <div class="col-xl-8">
+
+                <form method="post" class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2 class="h5 mb-1 section-title">
+
+                                <i class="bi bi-calendar-event"></i>
+
+                                <span>
+                                    Schedule Information
+                                </span>
+
+                            </h2>
+
+                            <p class="text-muted mb-0">
+                                Enter consultation schedule details.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row g-3">
+
+                        <!-- Psychologist -->
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+                                Psychologist
+                            </label>
+
+                            <select class="form-select">
+
+                                <option>
+                                    Select Psychologist
+                                </option>
+
+                                <option>
+                                    Dr. Nguyễn Thị Lan
+                                </option>
+
+                                <option>
+                                    Dr. Trần Minh Đức
+                                </option>
+
+                                <option>
+                                    Dr. Lê Hoàng Anh
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <!-- Consultation Type -->
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+                                Consultation Type
+                            </label>
+
+                            <select class="form-select">
+
+                                <option>
+                                    Individual Counseling
+                                </option>
+
+                                <option>
+                                    Academic Support
+                                </option>
+
+                                <option>
+                                    Stress Management
+                                </option>
+
+                                <option>
+                                    Mental Health Assessment
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <!-- Date -->
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+                                Appointment Date
+                            </label>
+
+                            <input type="date"
+                                   class="form-control">
+
+                        </div>
+
+                        <!-- Duration -->
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+                                Duration
+                            </label>
+
+                            <select class="form-select">
+
+                                <option>
+                                    30 Minutes
+                                </option>
+
+                                <option>
+                                    45 Minutes
+                                </option>
+
+                                <option>
+                                    60 Minutes
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <!-- Start Time -->
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+                                Start Time
+                            </label>
+
+                            <input type="time"
+                                   class="form-control">
+
+                        </div>
+
+                        <!-- End Time -->
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+                                End Time
+                            </label>
+
+                            <input type="time"
+                                   class="form-control">
+
+                        </div>
+
+                        <!-- Location -->
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+                                Location
+                            </label>
+
+                            <input type="text"
+                                   class="form-control"
+                                   placeholder="Psychology Counseling Room">
+
+                        </div>
+
+                        <!-- Meeting Mode -->
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+                                Meeting Mode
+                            </label>
+
+                            <select class="form-select">
+
+                                <option>
+                                    Face-to-Face
+                                </option>
+
+                                <option>
+                                    Online
+                                </option>
+
+                                <option>
+                                    Hybrid
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <!-- Description -->
+
+                        <div class="col-12">
+
+                            <label class="form-label">
+                                Description
+                            </label>
+
+                            <textarea class="form-control"
+                                      rows="4"
+                                      placeholder="Additional notes about this counseling session..."></textarea>
+
+                        </div>
+
+                    </div>
+
+                    <!-- ACTIONS -->
+
+                    <div class="d-flex justify-content-end gap-2 mt-4">
+
+                        <a asp-action="Index"
+                           class="btn btn-outline-secondary">
+
+                            Cancel
+
+                        </a>
+
+                        <button type="submit"
+                                class="btn btn-primary">
+
+                            <i class="bi bi-calendar-check"></i>
+
+                            Create Schedule
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+            <!-- SIDE PANEL -->
+
+            <div class="col-xl-4">
+
+                <div class="panel h-100">
+
+                    <h2 class="h5 mb-3 section-title">
+
+                        <i class="bi bi-info-circle"></i>
+
+                        <span>
+                            Schedule Guidelines
+                        </span>
+
+                    </h2>
+
+                    <ul class="mb-0">
+
+                        <li class="mb-3">
+                            Students can only register for available schedules.
+                        </li>
+
+                        <li class="mb-3">
+                            Avoid overlapping consultation times.
+                        </li>
+
+                        <li class="mb-3">
+                            Consultation sessions usually last 30–60 minutes.
+                        </li>
+
+                        <li>
+                            Online sessions should include meeting information.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>

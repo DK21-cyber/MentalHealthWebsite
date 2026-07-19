@@ -1,0 +1,185 @@
+﻿@model PW.Models.ViewModels.StudentDashboardViewModel
+
+@{
+    ViewData["Title"] = "Student Dashboard";
+}
+
+<div class="container py-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+
+            <h2 class="fw-bold">
+                Student Dashboard
+            </h2>
+
+            <p class="text-muted">
+                Welcome,
+                <strong>@Model.Student.Name</strong>
+            </p>
+
+        </div>
+
+        <a asp-action="Profile"
+           class="btn btn-primary">
+
+            My Profile
+
+        </a>
+
+    </div>
+
+    <div class="row g-4 mb-5">
+
+        <div class="col-md-4">
+
+            <div class="card shadow-sm">
+
+                <div class="card-body text-center">
+
+                    <h2 class="fw-bold text-primary">
+
+                        @Model.TotalSurveys
+
+                    </h2>
+
+                    <p>Total Surveys</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card shadow-sm">
+
+                <div class="card-body text-center">
+
+                    <h2 class="fw-bold text-success">
+
+                        @Model.TotalAppointments
+
+                    </h2>
+
+                    <p>Appointments</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card shadow-sm">
+
+                <div class="card-body text-center">
+
+                    <h2 class="fw-bold text-danger">
+
+                        @Model.PendingAppointments
+
+                    </h2>
+
+                    <p>Pending Appointments</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="card shadow-sm">
+
+        <div class="card-header">
+
+            <h5 class="mb-0">
+
+                Quick Actions
+
+            </h5>
+
+        </div>
+
+        <div class="card-body">
+
+            <div class="row g-3">
+
+                <div class="col-md-4">
+
+                    <a asp-action="TakeSurvey"
+                       class="btn btn-primary w-100">
+
+                        Take DASS-21 Survey
+
+                    </a>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <a asp-action="SurveyHistory"
+                       class="btn btn-outline-primary w-100">
+
+                        Survey History
+
+                    </a>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <a asp-action="BookAppointment"
+                       class="btn btn-success w-100">
+
+                        Book Appointment
+
+                    </a>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <a asp-action="AppointmentHistory"
+                       class="btn btn-outline-success w-100">
+
+                        Appointment History
+
+                    </a>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <a asp-action="PsychologicalProfile"
+                       class="btn btn-warning w-100">
+
+                        Psychological Profile
+
+                    </a>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <a asp-action="EditProfile"
+                       class="btn btn-secondary w-100">
+
+                        Edit Profile
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

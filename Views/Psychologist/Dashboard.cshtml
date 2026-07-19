@@ -1,0 +1,404 @@
+﻿@model PW.Models.ViewModels.PsychologistDashboardViewModel
+
+@{
+    ViewData["Title"] = "Psychologist Dashboard";
+}
+
+<div class="container py-5">
+
+    <!-- Header -->
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+
+            <h2 class="fw-bold">
+                Psychologist Dashboard
+            </h2>
+
+            <p class="text-muted mb-0">
+                Monitor appointments, psychological profiles and students requiring attention.
+            </p>
+
+        </div>
+
+        <a asp-action="CreateProfile"
+           class="btn btn-primary">
+
+            <i class="bi bi-person-plus-fill"></i>
+
+            Create Profile
+
+        </a>
+
+    </div>
+
+    <!-- Statistics -->
+
+    <div class="row g-4 mb-5">
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="card shadow-sm border-0">
+
+                <div class="card-body text-center">
+
+                    <h2 class="fw-bold text-primary">
+
+                        @Model.TotalStudents
+
+                    </h2>
+
+                    <p class="text-muted mb-0">
+
+                        Total Students
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="card shadow-sm border-0">
+
+                <div class="card-body text-center">
+
+                    <h2 class="fw-bold text-success">
+
+                        @Model.TodayAppointments
+
+                    </h2>
+
+                    <p class="text-muted mb-0">
+
+                        Today's Appointments
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="card shadow-sm border-0">
+
+                <div class="card-body text-center">
+
+                    <h2 class="fw-bold text-warning">
+
+                        @Model.PendingAppointments
+
+                    </h2>
+
+                    <p class="text-muted mb-0">
+
+                        Pending Appointments
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+
+            <div class="card shadow-sm border-0">
+
+                <div class="card-body text-center">
+
+                    <h2 class="fw-bold text-danger">
+
+                        @Model.HighRiskStudents
+
+                    </h2>
+
+                    <p class="text-muted mb-0">
+
+                        High-Risk Students
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Recent Appointments -->
+
+    <div class="card shadow-sm mb-4">
+
+        <div class="card-header bg-white">
+
+            <h5 class="mb-0">
+
+                Recent Appointments
+
+            </h5>
+
+        </div>
+
+        <div class="card-body">
+
+            <table class="table table-hover align-middle">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Student</th>
+
+                        <th>Date</th>
+
+                        <th>Time</th>
+
+                        <th>Status</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    @if (Model.RecentAppointments.Any())
+                    {
+                        @foreach (var item in Model.RecentAppointments)
+                        {
+                            <tr>
+
+                                <td>
+
+                                    @item.Student?.Name
+
+                                </td>
+
+                                <td>
+
+                                    @item.AppointmentDate.ToString("dd/MM/yyyy")
+
+                                </td>
+
+                                <td>
+
+                                    @item.Time.ToString("HH:mm")
+
+                                </td>
+
+                                <td>
+
+                                    @switch (item.Status)
+                                    {
+                                        case AppointmentStatus.Pending:
+
+                                            <span class="badge bg-warning">
+
+                                                Pending
+
+                                            </span>
+
+                                            break;
+
+                                        case AppointmentStatus.Approved:
+
+                                            <span class="badge bg-success">
+
+                                                Approved
+
+                                            </span>
+
+                                            break;
+
+                                        case AppointmentStatus.Completed:
+
+                                            <span class="badge bg-primary">
+
+                                                Completed
+
+                                            </span>
+
+                                            break;
+
+                                        default:
+
+                                            <span class="badge bg-danger">
+
+                                                Cancelled
+
+                                            </span>
+
+                                            break;
+                                    }
+
+                                </td>
+
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+
+                            <td colspan="4"
+                                class="text-center text-muted">
+
+                                No appointments found.
+
+                            </td>
+
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <!-- High Risk Students -->
+
+    <div class="card shadow-sm">
+
+        <div class="card-header bg-white">
+
+            <h5 class="mb-0">
+
+                Students Requiring Attention
+
+            </h5>
+
+        </div>
+
+        <div class="card-body">
+
+            <table class="table table-striped align-middle">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Student</th>
+
+                        <th>Status</th>
+
+                        <th>Diagnosis</th>
+
+                        <th>Created</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    @if (Model.HighRiskCases.Any())
+                    {
+                        @foreach (var item in Model.HighRiskCases)
+                        {
+                            <tr>
+
+                                <td>
+
+                                    @item.Student?.Name
+
+                                </td>
+
+                                <td>
+
+                                    @switch (item.Status)
+                                    {
+                                        case ProfileStatus.Normal:
+
+                                            <span class="badge bg-success">
+
+                                                Normal
+
+                                            </span>
+
+                                            break;
+
+                                        case ProfileStatus.Monitoring:
+
+                                            <span class="badge bg-warning text-dark">
+
+                                                Monitoring
+
+                                            </span>
+
+                                            break;
+
+                                        case ProfileStatus.Counseling:
+
+                                            <span class="badge bg-info">
+
+                                                Counseling
+
+                                            </span>
+
+                                            break;
+
+                                        default:
+
+                                            <span class="badge bg-danger">
+
+                                                High Risk
+
+                                            </span>
+
+                                            break;
+                                    }
+
+                            </td>
+
+                            <td>
+
+                                @(string.IsNullOrWhiteSpace(item.Diagnosis)
+                                                            ? "Not available"
+                                                            : item.Diagnosis)
+
+                        </td>
+
+                                <td>
+
+                                    @item.CreatedAt.ToString("dd/MM/yyyy")
+
+                                </td>
+
+                            </tr>
+                                        }
+                    }
+                    else
+                    {
+                        <tr>
+
+                            <td colspan="4"
+                                class="text-center text-muted">
+
+                                No psychological profiles available.
+
+                            </td>
+
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>

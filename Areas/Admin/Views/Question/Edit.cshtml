@@ -1,0 +1,232 @@
+﻿@{
+    Layout = "_LayoutAdmin";
+    ViewData["Title"] = "Edit Question";
+}
+
+<main class="dashboard-content">
+
+    <div class="container-fluid px-3 px-lg-4 py-4">
+
+        <div class="page-heading">
+
+            <div class="page-heading-copy">
+
+                <span class="page-icon">
+                    <i class="bi bi-pencil-square"></i>
+                </span>
+
+                <div>
+
+                    <p class="eyebrow mb-1">
+                        Survey Management
+                    </p>
+
+                    <h1 class="h3 mb-1">
+                        Edit Question
+                    </h1>
+
+                    <p class="text-muted mb-0">
+                        Update question information.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="heading-actions">
+
+                <a asp-action="Details"
+                   asp-route-id="1"
+                   class="btn btn-outline-secondary btn-sm">
+
+                    <i class="bi bi-arrow-left"></i>
+                    Back
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <section class="row g-3">
+
+            <div class="col-12 col-xl-8">
+
+                <form class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2 class="h5 mb-1 section-title">
+
+                                <i class="bi bi-ui-checks-grid"></i>
+
+                                <span>
+                                    Question Information
+                                </span>
+
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row g-3">
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+                                Question Code
+                            </label>
+
+                            <input type="text"
+                                   class="form-control"
+                                   value="Q01">
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+                                Display Order
+                            </label>
+
+                            <input type="number"
+                                   class="form-control"
+                                   value="1">
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+                                Category
+                            </label>
+
+                            <select class="form-select">
+
+                                <option selected>
+                                    Stress
+                                </option>
+
+                                <option>
+                                    Anxiety
+                                </option>
+
+                                <option>
+                                    Depression
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+                                Status
+                            </label>
+
+                            <select class="form-select">
+
+                                <option selected>
+                                    Active
+                                </option>
+
+                                <option>
+                                    Inactive
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="col-12">
+
+                            <label class="form-label">
+                                Question Content
+                            </label>
+
+                            <textarea class="form-control"
+                                      rows="6">I found it hard to wind down.</textarea>
+
+                        </div>
+
+                    </div>
+
+                    <div class="d-flex justify-content-end mt-4">
+
+                        <button type="submit"
+                                class="btn btn-primary">
+
+                            <i class="bi bi-check-circle"></i>
+                            Update Question
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+            <div class="col-12 col-xl-4">
+
+                <div class="panel">
+
+                    <h2 class="h5 mb-3 section-title">
+
+                        <i class="bi bi-info-circle"></i>
+
+                        <span>
+                            Question Statistics
+                        </span>
+
+                    </h2>
+
+                    <div class="info-list">
+
+                        <div>
+
+                            <span>Question ID</span>
+
+                            <strong>Q01</strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Category</span>
+
+                            <strong>Stress</strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Survey</span>
+
+                            <strong>DASS-21</strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Status</span>
+
+                            <strong>Active</strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>

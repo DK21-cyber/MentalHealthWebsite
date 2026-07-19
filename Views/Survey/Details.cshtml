@@ -1,0 +1,108 @@
+﻿@{
+    ViewData["Title"] = "Survey Detail";
+}
+
+<div class="container py-5">
+
+    <div class="card shadow">
+
+        <div class="card-body">
+
+            <h2>DASS-21</h2>
+
+            <hr />
+
+            <p>
+
+                DASS-21 là thang đo đánh giá:
+
+                <ul>
+                    <li>Stress</li>
+                    <li>Anxiety</li>
+                    <li>Depression</li>
+                </ul>
+
+            </p>
+
+            <div class="row mt-4">
+
+                <div class="col-md-6">
+
+                    <div class="info-box">
+
+                        <h5>Số câu hỏi</h5>
+
+                        <p>21 câu</p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <div class="info-box">
+
+                        <h5>Thời gian thực hiện</h5>
+
+                        <p>5 - 10 phút</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <hr />
+
+            <h4>Lịch sử gần nhất</h4>
+
+            <table class="table">
+
+                <tr>
+                    <th>Lần khảo sát gần nhất</th>
+                    <td>10/06/2026</td>
+                </tr>
+
+                <tr>
+                    <th>Kết quả</th>
+                    <td>
+                        Stress: Very Severe
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Lo âu</th>
+                    <td>
+                        Severe
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Trầm cảm</th>
+                    <td>
+                        Moderate
+                    </td>
+                </tr>
+
+            </table>
+
+            <div class="survey-action">
+
+                <a asp-controller="Survey"
+                   asp-action="TakeSurvey"
+                   asp-route-id="1"
+                   class="btn-start-survey">
+
+                    <i class="bi bi-clipboard-check"></i>
+
+                    Bắt đầu khảo sát
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

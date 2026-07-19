@@ -1,0 +1,175 @@
+﻿@model IEnumerable<PW.Models.Appointment>
+
+@{
+    ViewData["Title"] = "My Appointments";
+}
+
+<div class="container py-5">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+            <h2 class="fw-bold">
+                My Appointments
+            </h2>
+
+            <p class="text-muted mb-0">
+                View and manage your counseling appointments.
+            </p>
+        </div>
+
+        <a asp-action="Book"
+           class="btn btn-primary">
+
+            <i class="bi bi-plus-circle"></i>
+
+            Book Appointment
+
+        </a>
+
+    </div>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">
+
+            @TempData["Success"]
+
+        </div>
+    }
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">
+
+            @TempData["Error"]
+
+        </div>
+    }
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info">
+
+            You have not booked any appointments yet.
+
+        </div>
+    }
+    else
+    {
+
+        <div class="card shadow-sm border-0">
+
+            <div class="card-body">
+
+                <table class="table table-hover align-middle">
+
+                    <thead class="table-light">
+
+                        <tr>
+
+                            <th>Date</th>
+
+                            <th>Time</th>
+
+                            <th>Psychologist</th>
+
+                            <th>Status</th>
+
+                            <th width="140">
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+
+                                <td>
+
+                                    @item.AppointmentDate.ToString("dd/MM/yyyy")
+
+                                </td>
+
+                                <td>
+
+                                    @item.Time.ToString("HH:mm")
+
+                                </td>
+
+                                <td>
+
+                                    @item.Psychologist?.Name
+
+                                </td>
+
+                                <td>
+
+                                    @switch (item.Status)
+                                    {
+                                        case AppointmentStatus.Pending:
+
+                                            <span class="badge bg-warning">
+                                                Pending
+                                            </span>
+
+                                            break;
+
+                                        case AppointmentStatus.Approved:
+
+                                            <span class="badge bg-success">
+                                                Approved
+                                            </span>
+
+                                            break;
+
+                                        case AppointmentStatus.Completed:
+
+                                            <span class="badge bg-primary">
+                                                Completed
+                                            </span>
+
+                                            break;
+
+                                        case AppointmentStatus.Cancelled:
+
+                                            <span class="badge bg-danger">
+                                                Cancelled
+                                            </span>
+
+                                            break;
+                                    }
+
+                                </td>
+
+                                <td>
+
+                                    <a asp-action="Details"
+                                       asp-route-id="@item.Id"
+                                       class="btn btn-sm btn-outline-primary">
+
+                                        Details
+
+                                    </a>
+
+                                </td>
+
+                            </tr>
+                        }
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    }
+
+</div>

@@ -1,0 +1,366 @@
+﻿@{
+    Layout = "_LayoutAdmin";
+    ViewData["Title"] = "Model Details";
+}
+
+<main class="dashboard-content">
+
+    <div class="container-fluid px-3 px-lg-4 py-4">
+
+        <!-- PAGE HEADER -->
+
+        <div class="page-heading">
+
+            <div class="page-heading-copy">
+
+                <span class="page-icon">
+                    <i class="bi bi-cpu-fill"></i>
+                </span>
+
+                <div>
+
+                    <p class="eyebrow mb-1">
+                        Machine Learning
+                    </p>
+
+                    <h1 class="h3 mb-1">
+                        Neural Network
+                    </h1>
+
+                    <p class="text-muted mb-0">
+                        Detailed performance analysis of the selected model.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="heading-actions">
+
+                <a asp-action="Index"
+                   class="btn btn-outline-secondary btn-sm">
+
+                    <i class="bi bi-arrow-left"></i>
+                    Back to Models
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <section class="row g-3">
+
+            <!-- MODEL PROFILE -->
+
+            <div class="col-12 col-xl-4">
+
+                <div class="panel h-100 text-center profile-card">
+
+                    <div class="profile-cover">
+
+                        <img src="~/images/hero.png"
+                             alt="AI Model">
+
+                    </div>
+
+                    <div class="profile-hero">
+
+                        <i class="bi bi-cpu-fill"
+                           style="font-size:70px;"></i>
+
+                        <h2 class="h5 mt-3 mb-1">
+
+                            Neural Network
+
+                        </h2>
+
+                        <p class="text-muted mb-3">
+
+                            Combined Mental Health Classification
+
+                        </p>
+
+                        <span class="badge text-bg-primary">
+
+                            Best Model
+
+                        </span>
+
+                    </div>
+
+                    <div class="info-list mt-4 text-start">
+
+                        <div>
+
+                            <span>Dataset</span>
+
+                            <strong>515 Samples</strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Target</span>
+
+                            <strong>Stress / Anxiety / Depression</strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Algorithm</span>
+
+                            <strong>Neural Network</strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Status</span>
+
+                            <strong>Active</strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- PERFORMANCE -->
+
+            <div class="col-12 col-xl-8">
+
+                <div class="panel mb-3">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2 class="h5 mb-1 section-title">
+
+                                <i class="bi bi-speedometer2"></i>
+
+                                <span>
+                                    Performance Metrics
+                                </span>
+
+                            </h2>
+
+                            <p class="text-muted mb-0">
+
+                                Overall evaluation metrics.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row g-3">
+
+                        <div class="col-md-3">
+
+                            <div class="mini-card">
+
+                                <span>Accuracy</span>
+
+                                <strong>92.23%</strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-3">
+
+                            <div class="mini-card">
+
+                                <span>Precision</span>
+
+                                <strong>0.92</strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-3">
+
+                            <div class="mini-card">
+
+                                <span>Recall</span>
+
+                                <strong>0.92</strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-3">
+
+                            <div class="mini-card">
+
+                                <span>F1 Score</span>
+
+                                <strong>0.92</strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- CLASSIFICATION REPORT -->
+
+                <div class="panel mb-3">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2 class="h5 mb-1 section-title">
+
+                                <i class="bi bi-file-earmark-text"></i>
+
+                                <span>
+                                    Classification Report
+                                </span>
+
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <div class="table-responsive">
+
+                        <table class="table align-middle">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>Label</th>
+                                    <th>Precision</th>
+                                    <th>Recall</th>
+                                    <th>F1-Score</th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+
+                                    <td>Anxiety</td>
+                                    <td>0.93</td>
+                                    <td>0.78</td>
+                                    <td>0.85</td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>Depression</td>
+                                    <td>0.93</td>
+                                    <td>0.87</td>
+                                    <td>0.90</td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>Stress</td>
+                                    <td>0.92</td>
+                                    <td>0.95</td>
+                                    <td>0.94</td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+                <!-- CONFUSION MATRIX -->
+
+                <div class="panel mb-3">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2 class="h5 mb-1 section-title">
+
+                                <i class="bi bi-grid-3x3-gap"></i>
+
+                                <span>
+                                    Confusion Matrix
+                                </span>
+
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <div class="text-center">
+
+                        <img src="~/images/confusion-matrix.png"
+                             class="img-fluid rounded shadow-sm"
+                             alt="Confusion Matrix">
+
+                    </div>
+
+                </div>
+
+                <!-- CONCLUSION -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2 class="h5 mb-1 section-title">
+
+                                <i class="bi bi-lightbulb"></i>
+
+                                <span>
+                                    Conclusion
+                                </span>
+
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <div class="alert alert-success mb-0">
+
+                        The Neural Network model achieved the
+                        highest overall accuracy (92.23%) among all
+                        evaluated machine learning algorithms.
+                        The model demonstrates strong performance
+                        in identifying Stress, Anxiety, and Depression
+                        levels and is recommended for deployment
+                        within the Mental Health Screening System.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>

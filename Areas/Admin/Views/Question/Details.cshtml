@@ -1,0 +1,353 @@
+﻿@{
+    Layout = "_LayoutAdmin";
+    ViewData["Title"] = "Question Details";
+}
+
+<main class="dashboard-content">
+
+    <div class="container-fluid px-3 px-lg-4 py-4">
+
+        <!-- PAGE HEADER -->
+
+        <div class="page-heading">
+
+            <div class="page-heading-copy">
+
+                <span class="page-icon">
+                    <i class="bi bi-patch-question"></i>
+                </span>
+
+                <div>
+
+                    <p class="eyebrow mb-1">
+                        Survey Management
+                    </p>
+
+                    <h1 class="h3 mb-1">
+                        Question Details
+                    </h1>
+
+                    <p class="text-muted mb-0">
+                        View detailed information about a survey question.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="heading-actions">
+
+                <a asp-action="Index"
+                   class="btn btn-outline-secondary btn-sm">
+
+                    <i class="bi bi-arrow-left"></i>
+                    Back
+
+                </a>
+
+                <a asp-action="Edit"
+                   asp-route-id="1"
+                   class="btn btn-primary btn-sm">
+
+                    <i class="bi bi-pencil-square"></i>
+                    Edit
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <section class="row g-3">
+
+            <!-- LEFT -->
+
+            <div class="col-12 col-xl-4">
+
+                <div class="panel h-100 text-center profile-card">
+
+                    <div class="profile-cover">
+
+                        <div class="py-5">
+
+                            <i class="bi bi-ui-checks-grid"
+                               style="font-size:70px;"></i>
+
+                        </div>
+
+                    </div>
+
+                    <div class="profile-hero">
+
+                        <h2 class="h5 mb-1">
+
+                            Question Q01
+
+                        </h2>
+
+                        <p class="text-muted mb-3">
+
+                            DASS-21 Mental Health Survey
+
+                        </p>
+
+                        <span class="badge text-bg-success">
+
+                            Active
+
+                        </span>
+
+                    </div>
+
+                    <div class="info-list mt-4 text-start">
+
+                        <div>
+
+                            <span>Question ID</span>
+
+                            <strong>Q01</strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Category</span>
+
+                            <strong>Stress</strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Question Order</span>
+
+                            <strong>1</strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>Survey</span>
+
+                            <strong>DASS-21</strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT -->
+
+            <div class="col-12 col-xl-8">
+
+                <!-- OVERVIEW -->
+
+                <div class="panel mb-3">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2 class="h5 mb-1 section-title">
+
+                                <i class="bi bi-info-circle"></i>
+
+                                <span>
+                                    Question Overview
+                                </span>
+
+                            </h2>
+
+                            <p class="text-muted mb-0">
+
+                                Basic information about this question.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row g-3">
+
+                        <div class="col-md-4">
+
+                            <div class="mini-card">
+
+                                <span>Domain</span>
+
+                                <strong>Stress</strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <div class="mini-card">
+
+                                <span>Position</span>
+
+                                <strong>#1</strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <div class="mini-card">
+
+                                <span>Status</span>
+
+                                <strong>Active</strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- QUESTION CONTENT -->
+
+                <div class="panel mb-3">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2 class="h5 mb-1 section-title">
+
+                                <i class="bi bi-chat-square-text"></i>
+
+                                <span>
+                                    Question Content
+                                </span>
+
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+                    <div class="p-3">
+
+                        <blockquote class="blockquote">
+
+                            <p class="fs-5">
+
+                                "I found it hard to wind down."
+
+                            </p>
+
+                        </blockquote>
+
+                        <p class="text-muted">
+
+                            Students rate this statement based on
+                            their experience during the previous week.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- RESPONSE SCALE -->
+
+                <div class="panel">
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <h2 class="h5 mb-1 section-title">
+
+                                <i class="bi bi-list-ol"></i>
+
+                                <span>
+                                    Answer Scale
+                                </span>
+
+                            </h2>
+
+                            <p class="text-muted mb-0">
+
+                                Standard DASS-21 scoring scale.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="table-responsive">
+
+                        <table class="table align-middle mb-0">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>Score</th>
+
+                                    <th>Description</th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+
+                                    <td>0</td>
+
+                                    <td>Did not apply to me at all</td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>1</td>
+
+                                    <td>Applied to me to some degree</td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>2</td>
+
+                                    <td>Applied to me to a considerable degree</td>
+
+                                </tr>
+
+                                <tr>
+
+                                    <td>3</td>
+
+                                    <td>Applied to me very much</td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>

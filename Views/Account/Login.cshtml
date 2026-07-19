@@ -1,0 +1,163 @@
+﻿@model PW.Models.ViewModels.LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="auth-container">
+
+    <!-- Left Side -->
+    <div class="auth-left">
+
+        <div class="auth-overlay">
+
+            <h1>Mental Health AI</h1>
+
+            <p>
+                An intelligent platform for student mental health
+                assessment, appointment management, and psychological
+                support powered by Machine Learning.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Right Side -->
+    <div class="auth-right">
+
+        <div class="auth-card">
+
+            <h2>Sign In</h2>
+
+            <p class="auth-subtitle">
+                Welcome back! Please sign in to continue.
+            </p>
+
+            @if (TempData["Success"] != null)
+            {
+                <div class="alert alert-success">
+
+                    @TempData["Success"]
+
+                </div>
+            }
+
+            @if (TempData["Error"] != null)
+            {
+                <div class="alert alert-danger">
+
+                    @TempData["Error"]
+
+                </div>
+            }
+
+            <form asp-controller="Account"
+                  asp-action="Login"
+                  method="post">
+
+                @Html.AntiForgeryToken()
+
+                <div asp-validation-summary="ModelOnly"
+                     class="text-danger mb-3">
+                </div>
+
+                <!-- Email -->
+
+                <div class="form-group mb-3">
+
+                    <label asp-for="Email" class="form-label">
+                    </label>
+
+                    <input asp-for="Email"
+                           class="form-control"
+                           placeholder="Enter your email"
+                           autocomplete="email" />
+
+                    <span asp-validation-for="Email"
+                          class="text-danger">
+                    </span>
+
+                </div>
+
+                <!-- Password -->
+
+                <div class="form-group mb-3">
+
+                    <label asp-for="Password"
+                           class="form-label">
+                    </label>
+
+                    <input asp-for="Password"
+                           type="password"
+                           class="form-control"
+                           placeholder="Enter your password"
+                           autocomplete="current-password" />
+
+                    <span asp-validation-for="Password"
+                          class="text-danger">
+                    </span>
+
+                </div>
+
+                <!-- Remember Me -->
+
+                <div class="form-check mb-4">
+
+                    <input asp-for="RememberMe"
+                           class="form-check-input" />
+
+                    <label asp-for="RememberMe"
+                           class="form-check-label">
+                        Remember me
+                    </label>
+
+                </div>
+
+                <!-- Login Button -->
+
+                <button type="submit"
+                        class="btn-auth w-100">
+
+                    Sign In
+
+                </button>
+
+            </form>
+
+            <hr />
+
+            <div class="text-center mb-3">
+
+                <a asp-action="ForgotPassword">
+
+                    Forgot Password?
+
+                </a>
+
+            </div>
+
+            <div class="auth-footer">
+
+                Don't have an account?
+
+                <a asp-action="Register">
+
+                    Create one here
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+@section Scripts
+{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
